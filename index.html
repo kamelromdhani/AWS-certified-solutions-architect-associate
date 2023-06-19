@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.answer {
+display: none;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+}
+
+h1 {
+margin-bottom: 10px;
+}
+
+p {
+margin-bottom: 20px;
+}
+
+ul, ol {
+margin-bottom: 20px;
+margin-left: 20px;
+}
+
+div {
+margin-bottom: 20px;
+}
+</style>
+<script>
+function toggleAnswer(id) {
+var answer = document.getElementById(id);
+if (answer.style.display === "none") {
+answer.style.display = "block";
+} else {
+answer.style.display = "none";
+}
+}
+</script>
+</head>
+<body>
+
+<h3>What is a placement group in Amazon EC2 and why use it?</h3>
+<button onclick="toggleAnswer('answer44')">Show Answer</button>
+<p id="answer44" class="answer">
+When you launch a new EC2 instance, the EC2 service attempts to place the instance in such a way that all of your instances are spread out across underlying hardware to minimize correlated failures. You can use placement groups to influence the placement of a group of interdependent instances to meet the needs of your workload.
+</p>
+
+<h3>What are the three placement strategies that can be used when creating a placement group in Amazon EC2?</h3>
+<p id="answer1" class="answer">Cluster, Partition, and Spread.</p>
+<button onclick="toggleAnswer('answer1')">Show Answer</button>
+
+<h3>What is the purpose of the Cluster placement strategy in Amazon EC2?</h3>
+<p id="answer2" class="answer">The Cluster placement strategy packs instances close together inside an Availability Zone. This strategy enables workloads to achieve the low-latency network performance necessary for tightly-coupled node-to-node communication that is typical of high-performance computing (HPC) applications.</p>
+<button onclick="toggleAnswer('answer2')">Show Answer</button>
+
+<h3>What is the purpose of the Partition placement strategy in Amazon EC2?</h3>
+<p id="answer3" class="answer">The Partition placement strategy spreads your instances across logical partitions such that groups of instances in one partition do not share the underlying hardware with groups of instances in different partitions. This strategy is typically used by large distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka.</p>
+<button onclick="toggleAnswer('answer3')">Show Answer</button>
+
+<h3>What is the purpose of the Spread placement strategy in Amazon EC2?</h3>
+<p id="answer4" class="answer">The Spread placement strategy strictly places a small group of instances across distinct underlying hardware to reduce correlated failures.</p>
+<button onclick="toggleAnswer('answer4')">Show Answer</button>
+
+<h3>Is there a charge for creating a placement group in Amazon EC2?</h3>
+<p id="answer5" class="answer">No.</p>
+<button onclick="toggleAnswer('answer5')">Show Answer</button>
+
+<h3>What happens when you hibernate an instance in Amazon EC2?</h3>
+<p id="answer6" class="answer">When you hibernate an instance in Amazon EC2, the operating system performs hibernation by saving the contents from the instance memory (RAM) to the Amazon Elastic Block Store (Amazon EBS) root volume. When you start the instance again, the EBS root volume is restored to its previous state, the RAM contents are reloaded, and the previously running processes are resumed.</p>
+<button onclick="toggleAnswer('answer6')">Show Answer</button>
+
+<h3>What is the purpose of hibernation in Amazon EC2?</h3>
+<p id="answer7" class="answer">Hibernation in Amazon EC2 can be used to pre-warm an instance that takes a long time to bootstrap.</p>
+<button onclick="toggleAnswer('answer7')">Show Answer</button>
+
+<h3>What is a Spot Fleet in Amazon EC2?</h3>
+<p id="answer8" class="answer">A Spot Fleet in Amazon EC2 is a set of Spot Instances and optionally on-demand instances.</p>
+<button onclick="toggleAnswer('answer8')">Show Answer</button>
+
+<h3>If you want to achieve maximum availability when there's an Availability Zone failure for a fleet of EC2 instances running a critical application, which EC2 Placement Group should you choose?</h3>
+<p id="answer9" class="answer">If you want to achieve maximum availability in the event of an Availability Zone failure, you should choose a Spread placement group.</p>
+<button onclick="toggleAnswer('answer9')">Show Answer</button>
+
+<h3>Can an Elastic Network Interface (ENI) be attached to EC2 instances in another Availability Zone?</h3>
+<p id="answer10" class="answer">No.</p>
+<button onclick="toggleAnswer('answer10')">Show Answer</button>
+
+<h3>Are EBS volumes bound to a specific Availability Zone (AZ)?</h3>
+<p id="answer11" class="answer">Yes, EBS volumes are bound to a specific Availability Zone (AZ) and cannot be attached to instances in other AZs.</p>
+<button onclick="toggleAnswer('answer11')">Show Answer</button>
+
+<h3>Can EBS volumes be detached and attached to a different EC2 instance?</h3>
+<p id="answer12" class="answer">Yes.</p>
+<button onclick="toggleAnswer('answer12')">Show Answer</button>
+
+<h3>"By default, is the ""delete on termination"" attribute enabled for the root EBS volume of an EC2 instance?</h3>
+<p id="answer13" class="answer">Yes.</p>
+<button onclick="toggleAnswer('answer13')">Show Answer</button>
+
+<h3>Can you create an Amazon Machine Image (AMI) from an existing EC2 instance?</h3>
+<p id="answer14" class="answer">Yes.</p>
+<button onclick="toggleAnswer('answer14')">Show Answer</button>
+
+<h3>Is Amazon EC2 instance store ephemeral (lose their storage if they're stopped)?</h3>
+<p id="answer15" class="answer">Yes.</p>
+<button onclick="toggleAnswer('answer15')">Show Answer</button>
+
+<h3>Can you independently set the IOPS and the throughput for General Purpose SSD (gp3) EBS volumes?</h3>
+<p id="answer16" class="answer">Yes, you can independently set the IOPS and the throughput for General Purpose SSD (gp3) EBS volumes. However, for General Purpose SSD (gp2) EBS volumes, IOPS and throughput are linked together.</p>
+<button onclick="toggleAnswer('answer16')">Show Answer</button>
+
+<h3>Can a Hard Disk Drive (HDD) be used as a boot volume?</h3>
+<p id="answer17" class="answer">No.</p>
+<button onclick="toggleAnswer('answer17')">Show Answer</button>
+
+<h3>How many Linux instances can Multi-Attach enabled volumes be attached to?</h3>
+<p id="answer18" class="answer">16 Linux instances.</p>
+<button onclick="toggleAnswer('answer18')">Show Answer</button>
+
+<h3>Is Multi-Attach supported on all EBS volume types?</h3>
+<p id="answer19" class="answer">No, Multi-Attach is supported exclusively on Provisioned IOPS SSD (io1 and io2) volumes.</p>
+<button onclick="toggleAnswer('answer19')">Show Answer</button>
+
+<h3>Is Amazon Elastic File System (EFS) only for Linux instances?</h3>
+<p id="answer20" class="answer">Yes.</p>
+<button onclick="toggleAnswer('answer20')">Show Answer</button>
+
+<h3>Can an AMI in the N. Virginia Region (us-east-1) be used to launch an EC2 instance in any AWS Region?</h3>
+<p id="answer21" class="answer">No, an AMI in the N. Virginia Region (us-east-1) can only be used to launch an EC2 instance in the same region.</p>
+<button onclick="toggleAnswer('answer21')">Show Answer</button>
+
+<h3>Can EBS volume types be used as boot volumes when creating EC2 instances?</h3>
+<p id="answer22" class="answer">Yes, EBS volume types such as General Purpose SSD (gp2), General Purpose SSD (gp3), Provisioned IOPS SSD (io1), and Provisioned IOPS SSD (io2) can be used as boot volumes when creating EC2 instances.</p>
+<button onclick="toggleAnswer('answer22')">Show Answer</button>
+
+<h3>How can you encrypt an unencrypted EBS volume attached to your EC2 instance?</h3>
+<p id="answer23" class="answer">To encrypt an unencrypted EBS volume attached to your EC2 instance, you can follow these steps:
+1. Create an EBS snapshot of the volume.
+2. Copy the snapshot and enable the encryption option during the copy process.
+3. Use the encrypted snapshot to create a new EBS volume.</p>
+<button onclick="toggleAnswer('answer23')">Show Answer</button>
+<h3>What are the four kinds of managed load balancers offered by AWS?</h3>
+<p id="answer24" class="answer">- Classic Load Balancer (CLB)
+- Application Load Balancer (ALB)
+- Network Load Balancer (NLB)
+- Gateway Load Balancer (GWLB)</p>
+<button onclick="toggleAnswer('answer24')">Show Answer</button>
+<h3>What are the supported protocols for Classic Load Balancer (CLB)?</h3>
+<p id="answer25" class="answer">- HTTP
+- HTTPS
+- TCP
+- SSL (secure TCP)</p>
+<button onclick="toggleAnswer('answer25')">Show Answer</button>
+<h3>What are the supported protocols for Application Load Balancer (ALB)?</h3>
+<p id="answer26" class="answer">- HTTP
+- HTTPS
+- WebSocket</p>
+<button onclick="toggleAnswer('answer26')">Show Answer</button>
+<h3>What are the supported protocols for Network Load Balancer (NLB)?</h3>
+<p id="answer27" class="answer">- TCP
+- TLS (secure TCP)
+- UDP</p>
+<button onclick="toggleAnswer('answer27')">Show Answer</button>
+<h3>How many static IP addresses does Network Load Balancer (NLB) have per Availability Zone?</h3>
+<p id="answer28" class="answer">Network Load Balancer (NLB) has one static IP address per Availability Zone.</p>
+<button onclick="toggleAnswer('answer28')">Show Answer</button>
+<h3>What kind of traffic is Network Load Balancer (NLB) best suited for?</h3>
+<p id="answer29" class="answer">Network Load Balancer (NLB) is best suited for extreme performance, TCP, or UDP traffic.</p>
+<button onclick="toggleAnswer('answer29')">Show Answer</button>
+<h3>Are Network Load Balancers included in the AWS free tier?</h3>
+<p id="answer30" class="answer">No, Network Load Balancers are not included in the AWS free tier.</p>
+<button onclick="toggleAnswer('answer30')">Show Answer</button>
+<h3>Which resources can be target groups for Network Load Balancer (NLB)?</h3>
+<p id="answer31" class="answer">- EC2 instances
+- IP Addresses (must be private IPs)
+- Application Load Balancer</p>
+<button onclick="toggleAnswer('answer31')">Show Answer</button>
+<h3>What is the purpose of Gateway Load Balancer (GWLB)?</h3>
+<p id="answer32" class="answer">Gateway Load Balancer (GWLB) is used to deploy, scale, and manage a fleet of third-party network virtual appliances in AWS, such as firewalls, intrusion detection and prevention systems, deep packet inspection systems, payload manipulation, etc. It operates at Layer 3 (Network Layer) and combines the functions of a transparent network gateway and a load balancer to distribute traffic to virtual appliances.</p>
+<button onclick="toggleAnswer('answer32')">Show Answer</button>
+<h3>What are the commonly used cookie names in AWS load balancing?</h3>
+<p id="answer33" class="answer">The commonly used cookie names in AWS load balancing are AWSALBAPP, AWSALBTG, and AWSALB.</p>
+<button onclick="toggleAnswer('answer33')">Show Answer</button>
+<h3>What is Cross-Zone Load Balancing?</h3>
+<p id="answer34" class="answer">Cross-Zone Load Balancing is a feature that allows the distribution of traffic evenly across all instances in all enabled Availability Zones (AZs). For Application Load Balancers, this feature is enabled by default, and there are no charges for inter-AZ data. For Network Load Balancer and Gateway Load Balancer, the feature is disabled by default, and you have to pay charges for inter-AZ data if it is enabled. For Classic Load Balancers, the feature is disabled by default, and there are no charges for inter-AZ data if it is enabled.</p>
+<button onclick="toggleAnswer('answer34')">Show Answer</button>
+<h3>What is connection draining and deregistration delay in the context of ELB?</h3>
+<p id="answer35" class="answer">Connection draining is used in Classic Load Balancer while deregistration delay is used in Application Load Balancer and Network Load Balancer to give time for the request to complete while the instance is de-registering or unhealthy. By default, the time is set to 300 seconds.</p>
+<button onclick="toggleAnswer('answer35')">Show Answer</button>
+<h3>What is the X-Forwarded-For header in the context of ELB?</h3>
+<p id="answer36" class="answer">The X-Forwarded-For header is used in the context of ELB (Elastic Load Balancer). It contains the client IP address, which is added by the load balancer in the header.</p>
+<button onclick="toggleAnswer('answer36')">Show Answer</button>
+<h3>How many Read Replicas can we create for a single RDS instance?</h3>
+<p id="answer37" class="answer">You can create up to 5 Read Replicas for a single RDS instance.</p>
+<button onclick="toggleAnswer('answer37')">Show Answer</button>
+<h3>What is the main purpose of RDS Read Replicas?</h3>
+<p id="answer38" class="answer">The main purpose of RDS Read Replicas is to improve read scalability and reduce read-related database latency. They provide a way to offload read traffic from the primary database instance and distribute it across multiple replicas.</p>
+<button onclick="toggleAnswer('answer38')">Show Answer</button>
+<h3>Is replication synchronous or asynchronous in RDS Read Replicas?</h3>
+<p id="answer39" class="answer">Replication in RDS Read Replicas is asynchronous. Changes made to the primary instance are asynchronously replicated to the Read Replicas.</p>
+<button onclick="toggleAnswer('answer39')">Show Answer</button>
+<h3>What types of statements are allowed on RDS Read Replicas? (SELECT, INSERT, UPDATE, and DELETE)</h3>
+<p id="answer40" class="answer">Only SELECT statements are allowed on RDS Read Replicas. INSERT, UPDATE, and DELETE statements are not allowed. Read Replicas are intended for read-intensive workloads.</p>
+<button onclick="toggleAnswer('answer40')">Show Answer</button>
+<h3>Can we create Read Replicas across different AWS regions?</h3>
+<p id="answer41" class="answer">Yes, it is possible to create Read Replicas across different AWS regions. This allows for replication and distribution of data across regions for disaster recovery or global read scalability.</p>
+<button onclick="toggleAnswer('answer41')">Show Answer</button>
+<h3>Does the application have to modify the connection string to use RDS Read Replicas?</h3>
+<p id="answer42" class="answer">Yes, applications must update the connection string to leverage Read Replicas. The connection string needs to include the endpoints of the Read Replicas to enable the application to read from them.</p>
+<button onclick="toggleAnswer('answer42')">Show Answer</button>
+<h3>What is RDS Multi AZ used for?</h3>
+<p id="answer43" class="answer">RDS Multi AZ (Multiple Availability Zone) is used for disaster recovery. It provides automatic failover to a standby replica instance in another Availability Zone (AZ) in the event of an outage or failure in the primary AZ. It increases availability and provides a way to recover from disasters.</p>
+<button onclick="toggleAnswer('answer43')">Show Answer</button>
+<h3>What is the replication method used in RDS Multi AZ? (SYNC or ASYNC)</h3>
+<p id="answer44" class="answer">RDS Multi AZ uses synchronous replication for high availability and data durability. The data is synchronously replicated to the standby replica instance in another AZ, ensuring that both instances have consistent copies of the data.</p>
+<button onclick="toggleAnswer('answer44')">Show Answer</button>
+<h3>In what scenarios will RDS Multi AZ trigger automatic failover?</h3>
+<p id="answer45" class="answer">RDS Multi AZ will trigger automatic failover in the event of a loss of network connectivity, a storage failure, an instance failure, or an AZ outage. It ensures that the database remains available and the failover happens seamlessly.</p>
+<button onclick="toggleAnswer('answer45')">Show Answer</button>
+<h3>Can RDS Multi AZ be used for scaling read traffic?</h3>
+<p id="answer1" class="answer">No, RDS Multi AZ is not used for scaling read traffic. It is primarily used for increasing availability and providing disaster recovery capabilities. To scale read traffic, you can use RDS Read Replicas.</p>
+<button onclick="toggleAnswer('answer1')">Show Answer</button>
+
+<h3>How can you move an RDS database from single AZ to Multi AZ?</h3>
+<p id="answer2" class="answer">To move an RDS database from single AZ to Multi AZ, you can use the "modify" option for the database. The process internally takes a snapshot of the database, restores it to a new AZ, and establishes synchronization between the primary and standby instances without any downtime.</p>
+<button onclick="toggleAnswer('answer2')">Show Answer</button>
+
+<h3>What is RDS Custom and how is it different from RDS offerings?</h3>
+<p id="answer3" class="answer">RDS Custom is a feature that allows for OS and database customization in RDS (Amazon Relational Database Service). It provides users with access to the underlying database and operating system, allowing them to configure settings, install patches, enable native features, and access the underlying EC2 Instance using SSH or SSM Session Manager. This customization capability sets it apart from other RDS offerings.</p>
+<button onclick="toggleAnswer('answer3')">Show Answer</button>
+
+<h3>What types of databases can be customized with RDS Custom?</h3>
+<p id="answer4" class="answer">RDS Custom allows for customization of Managed Oracle and Microsoft SQL Server Databases. Users can have more control and flexibility over the configuration and management of these database engines.</p>
+<button onclick="toggleAnswer('answer4')">Show Answer</button>
+
+<h3>Does Oracle RDS support IAM database authentication?</h3>
+<p id="answer5" class="answer">No, Oracle RDS does not support IAM database authentication. IAM database authentication is currently available for Amazon RDS for MySQL and Amazon RDS for PostgreSQL.</p>
+<button onclick="toggleAnswer('answer5')">Show Answer</button>
+
+<h3>Which database management systems are supported as Aurora DB?</h3>
+<p id="answer6" class="answer">Aurora DB supports both Postgres and MySQL as compatible database management systems. It is designed to be compatible with existing MySQL and Postgres applications.</p>
+<button onclick="toggleAnswer('answer6')">Show Answer</button>
+
+<h3>How does Aurora's performance compare to MySQL on RDS and Postgres on RDS?</h3>
+<p id="answer7" class="answer">Aurora claims a 5x performance improvement over MySQL on RDS and over 3x the performance of Postgres on RDS. It achieves this performance improvement by implementing an innovative storage architecture that is purpose-built for cloud database workloads.</p>
+<button onclick="toggleAnswer('answer7')">Show Answer</button>
+
+<h3>How many replicas can Aurora have compared to MySQL?</h3>
+<p id="answer8" class="answer">Aurora can have up to 15 replicas, while MySQL on RDS supports up to 5 replicas.</p>
+<button onclick="toggleAnswer('answer8')">Show Answer</button>
+
+<h3>Is failover instantaneous in Aurora?</h3>
+<p id="answer9" class="answer">Yes, failover in Aurora is instantaneous. Aurora is designed for high availability (HA), and its native HA capabilities ensure that failover happens quickly and seamlessly.</p>
+<button onclick="toggleAnswer('answer9')">Show Answer</button>
+
+<h3>How does Aurora compare in cost to RDS?</h3>
+<p id="answer10" class="answer">Aurora generally costs around 20% more than RDS. However, the specific cost can vary based on factors such as instance types, storage requirements, and the region where the database is deployed.</p>
+<button onclick="toggleAnswer('answer10')">Show Answer</button>
+
+<h3>What is Aurora Auto Scaling?</h3>
+<p id="answer11" class="answer">Aurora Auto Scaling is a feature that automatically adjusts the number of Aurora replicas based on the workload demand. It can create new replicas or remove existing ones in response to factors like CPU utilization, ensuring optimal performance and scalability.</p>
+<button onclick="toggleAnswer('answer11')">Show Answer</button>
+
+<h3>What are Aurora Custom Endpoints?</h3>
+<p id="answer12" class="answer">Aurora Custom Endpoints allow you to create a custom endpoint for an Aurora cluster that directs traffic specifically to certain read replicas. This feature enables you to route queries to read replicas with specific capabilities, such as better processing power or specialized configurations.</p>
+<button onclick="toggleAnswer('answer12')">Show Answer</button>
+
+<h3>What is Aurora Serverless?</h3>
+<p id="answer13" class="answer">Aurora Serverless is a serverless deployment mode for Amazon Aurora. It automatically scales database capacity up or down based on the actual usage demands of the application. Aurora Serverless is well-suited for workloads with infrequent, intermittent, or unpredictable traffic patterns, as it eliminates the need for manual capacity planning and provides cost savings by charging per second of usage.</p>
+<button onclick="toggleAnswer('answer13')">Show Answer</button>
+
+<h3>What is Aurora Multi-Master?</h3>
+<p id="answer14" class="answer">Aurora Multi-Master is a feature of Amazon Aurora that enables multiple nodes in an Aurora cluster to act as read-write nodes. Each node can handle write operations, eliminating the need to promote a read replica as the new master in the event of a failure. Aurora Multi-Master uses a shared storage volume, allowing all nodes to have access to the same set of data.</p>
+<button onclick="toggleAnswer('answer14')">Show Answer</button>
+
+<h3>What is Aurora Global Database?</h3>
+<p id="answer15" class="answer">Aurora Global Database is a feature that allows you to create a globally distributed database infrastructure for Aurora. It consists of one primary region where read and write operations can be performed and up to five secondary regions for read-only operations. The replication lag between regions is typically less than 1 second, and up to 16 read replicas per secondary region can be created. Aurora Global Database helps reduce latency and provides a highly available and scalable database solution across multiple geographic regions.</p>
+<button onclick="toggleAnswer('answer15')">Show Answer</button>
+
+<h3>What is Aurora Machine Learning?</h3>
+<p id="answer16" class="answer">Aurora Machine Learning is a feature that enables integration between Aurora and AWS machine learning services. It allows you to add machine learning-based predictions to your applications using SQL queries. Aurora Machine Learning is supported by services such as Amazon SageMaker, which provides a platform for building and deploying ML models, and Amazon Comprehend, which offers natural language processing capabilities. This feature simplifies the integration of machine learning into database applications without requiring extensive ML expertise. Use cases for Aurora Machine Learning include fraud detection, targeted advertising, sentiment analysis, and product recommendations.</p>
+<button onclick="toggleAnswer('answer16')">Show Answer</button>
+
+<h3>How often are transaction logs backed up in RDS?</h3>
+<p id="answer17" class="answer">In RDS, transaction logs are backed up every 5 minutes. These transaction logs are a critical component for point-in-time recovery and database backups.</p>
+<button onclick="toggleAnswer('answer17')">Show Answer</button>
+
+<h3>How long is the retention period for automated backups in RDS, and can it be disabled?</h3>
+<p id="answer18" class="answer">The retention period for automated backups in RDS can be set between 1 and 35 days. It is customizable according to your requirements. Additionally, you can choose to disable automated backups if you prefer to rely on manual snapshots or other backup mechanisms.</p>
+<button onclick="toggleAnswer('answer18')">Show Answer</button>
+
+<h3>How can costs be reduced for a stopped RDS database that will not be used for a long time?</h3>
+<p id="answer19" class="answer">To reduce costs for a stopped RDS database that will not be used for a long time, you can take a final snapshot of the database and then delete the RDS instance. When you need to use the database again, you can restore the snapshot and recreate the RDS instance. This approach avoids incurring ongoing costs for the database while it is not in use.</p>
+<button onclick="toggleAnswer('answer19')">Show Answer</button>
+
+<h3>How often are full backups of the RDS database taken?</h3>
+<p id="answer20" class="answer">Full backups of the RDS database are taken daily during the designated backup window. This backup captures the entire database at a specific point in time, ensuring data durability and recoverability.</p>
+<button onclick="toggleAnswer('answer20')">Show Answer</button>
+
+<h3>What is Percona XtraBackup?</h3>
+<p id="answer21" class="answer">Percona XtraBackup is a free, open-source tool that provides an online backup solution for MySQL databases. It allows you to perform hot backups of your MySQL database without locking the tables, ensuring minimal downtime during the backup process.</p>
+<button onclick="toggleAnswer('answer21')">Show Answer</button>
+
+<h3>How can you migrate an on-premises MySQL database to RDS?</h3>
+<p id="answer22" class="answer">To migrate an on-premises MySQL database to RDS, you can follow these general steps:
+
+1. Create a backup of the on-premises MySQL database using a tool like Percona XtraBackup.
+2. Store the backup file on Amazon S3 or a similar storage service.
+3. Create a new RDS instance running MySQL.
+4. Restore the backup file onto the new RDS instance.
+5. Configure the necessary network connectivity and access permissions to connect to the RDS instance.
+
+This process allows you to transfer the data from your on-premises database to the RDS environment.</p>
+<button onclick="toggleAnswer('answer22')">Show Answer</button>
+
+<h3>What is Aurora database cloning, and how is it different from snapshot and restore?</h3>
+<p id="answer23" class="answer">Aurora database cloning is a feature that enables the creation of a new Aurora cluster, known as a "clone," from an existing cluster. The clone initially shares the same data pages as the original cluster but is a separate and independent volume. Cloning is faster and more space-efficient than physically copying the data using other techniques, such as restoring a snapshot.
+
+Unlike snapshot and restore, which involve creating a new cluster from a snapshot, cloning allows you to create an entirely new cluster that can be modified and used independently from the source cluster. This makes it easier to create multiple development or test environments, each with its own cluster, from a single source cluster.</p>
+<button onclick="toggleAnswer('answer23')">Show Answer</button>
+
+<h3>Can you create read replicas of an Aurora cluster?</h3>
+<p id="answer24" class="answer">Yes, you can create read replicas of an Aurora cluster. Aurora allows you to create up to 15 replicas of a cluster to offload read traffic and improve scalability. These replicas can be used for read-heavy workloads, reporting, or analytics purposes.</p>
+<button onclick="toggleAnswer('answer24')">Show Answer</button>
+
+<h3>How is data durability ensured in Aurora?</h3>
+<p id="answer25" class="answer">Data durability in Aurora is ensured through a combination of techniques, including data replication and continuous incremental backups.
+
+Aurora replicates data across multiple Availability Zones (AZs) in a single AWS Region. This ensures that even if one AZ becomes unavailable, data is still accessible from the other AZs. Aurora uses a distributed storage system that replicates six copies of your data across three AZs, with each copy containing 10GB or 6 replicas, whichever is greater.
+
+Additionally, Aurora continuously backs up your data in the background, storing the backups in Amazon S3. These backups allow for point-in-time recovery and protect against data loss.
+
+The combination of data replication and continuous backups ensures high data durability and availability in Aurora.</p>
+<button onclick="toggleAnswer('answer25')">Show Answer</button>
+
+
+<h3>Is SSH available in RDS?</h3>
+<p id="answer71" class="answer">No, SSH access is not available in RDS, except for RDS Custom instances. RDS is a managed database service where administrative access to the underlying infrastructure is not provided. Instead, RDS offers secure connectivity options such as SSL/TLS and provides management capabilities through its API, CLI, and web console.</p>
+<button onclick="toggleAnswer('answer71')">Show Answer</button>
+
+<h3>What is Amazon RDS Proxy?</h3>
+<p id="answer72" class="answer">Amazon RDS Proxy is a fully managed database proxy service provided by AWS. It allows applications to pool and share connections to the database, improving efficiency and scalability. RDS Proxy helps reduce connection-related resource exhaustion on the database server and enables better scalability for applications that have a high rate of opening and closing database connections.</p>
+<button onclick="toggleAnswer('answer72')">Show Answer</button>
+
+<h3>How does RDS Proxy improve database efficiency?</h3>
+<p id="answer73" class="answer">RDS Proxy improves database efficiency by reducing the stress on database resources such as CPU and RAM. It achieves this by minimizing the number of open connections and timeouts. By pooling and sharing connections, RDS Proxy reduces the overhead of establishing and closing connections for each database request, resulting in improved performance and scalability.</p>
+<button onclick="toggleAnswer('answer73')">Show Answer</button>
+
+<h3>Is RDS Proxy publicly accessible?</h3>
+<p id="answer74" class="answer">No, RDS Proxy is never publicly accessible. It can only be accessed from within a Virtual Private Cloud (VPC). This ensures that the proxy service is protected and accessed securely within the VPC environment.</p>
+<button onclick="toggleAnswer('answer74')">Show Answer</button>
+
+<h3>Do you need to make any code changes to your app to use RDS Proxy?</h3>
+<p id="answer75" class="answer">No, you do not need to make any code changes to your application to use RDS Proxy. RDS Proxy works transparently with your existing database connections and requires no modifications to your application code. It acts as an intermediary between your application and the RDS database, providing connection pooling and management without requiring changes to the application logic.</p>
+<button onclick="toggleAnswer('answer75')">Show Answer</button>
+
+<h3>What are the differences between Redis and Memcached?</h3>
+<p id="answer76" class="answer">The differences between Redis and Memcached are as follows:
+
+Redis:
+- Supports multi-AZ deployment with automatic failover.
+- Provides support for read replicas, allowing for scaling of read operations.
+- Offers data durability through AOF (Append Only File) persistence, ensuring data is written to disk.
+- Supports additional data types and complex operations like sets, lists, and sorted sets.
+- Provides built-in replication and high availability features.
+
+Memcached:
+- Supports multi-node deployment for data partitioning across nodes.
+- Lacks built-in high availability, persistence, and backup/restore mechanisms.
+- Utilizes a non-threaded architecture.
+- Primarily focuses on fast, in-memory caching of key-value pairs.
+- Offers simplicity and high-performance for caching use cases.</p>
+<button onclick="toggleAnswer('answer76')">Show Answer</button>
+
+<h3>What security features are available in ElastiCache for Redis?</h3>
+<p id="answer77" class="answer">ElastiCache for Redis provides the following security features:
+- IAM (Identity and Access Management) authentication, allowing fine-grained access control through IAM policies.
+- Redis AUTH command for password-based authentication.
+- In-flight encryption using SSL/TLS, ensuring secure communication between clients and the Redis cluster.</p>
+<button onclick="toggleAnswer('answer77')">Show Answer</button>
+
+<h3>What are some common patterns for using ElastiCache?</h3>
+<p id="answer78" class="answer">Some common patterns for using ElastiCache include:
+
+1. Lazy Loading: Caching frequently accessed data in ElastiCache to reduce load on the primary data source. Data is loaded into the cache on-demand, but it can become stale over time.
+2. Write Through: Adding or updating data in the cache whenever it is written to the primary data source. This ensures that the cache remains consistent with the primary data source and avoids stale data.
+3. Session Store: Storing temporary session data in the cache using the Time to Live (TTL) feature. This allows for fast and scalable session management.</p>
+<button onclick="toggleAnswer('answer78')">Show Answer</button>
+
+<h3>What is the Lazy Loading pattern in ElastiCache?</h3>
+<p id="answer79" class="answer">The Lazy Loading pattern in ElastiCache involves caching all read data in the cache. When data is requested, it is first checked in the cache. If the data is present, it is returned from the cache, reducing the load on the primary data source. However, over time, the data in the cache can become stale as it may not reflect the most recent updates made to the primary data source.</p>
+<button onclick="toggleAnswer('answer79')">Show Answer</button>
+
+<h3>What is the Write Through pattern in ElastiCache?</h3>
+<p id="answer80" class="answer">The Write Through pattern in ElastiCache involves adding or updating data in the cache whenever it is written to the primary data source. This ensures that the cache remains consistent with the primary data source, and there is no stale data in the cache. Each write operation updates the cache, providing fast access to frequently accessed data.</p>
+<button onclick="toggleAnswer('answer80')">Show Answer</button>
+
+<h3>What is the Session Store pattern in ElastiCache?</h3>
+<p id="answer81" class="answer">The Session Store pattern in ElastiCache involves using the cache as a storage mechanism for temporary session data. Instead of storing session data in the application's local memory, it is stored in the cache with a defined Time to Live (TTL). This allows for fast and scalable session management, as the data can be easily shared across multiple application instances.</p>
+<button onclick="toggleAnswer('answer81')">Show Answer</button>
+
+<h3>What is a solution for implementing a gaming leaderboard?</h3>
+<p id="answer82" class="answer">A solution for implementing a gaming leaderboard can be achieved using ElastiCache with Redis. Redis provides sorted sets, which guarantee both uniqueness and element ordering. Each time a new element is added, it is ranked in real-time based on a score and added in the correct order in the sorted set. This allows for efficient retrieval of the leaderboard rankings and real-time updates as new scores are added.</p>
+<button onclick="toggleAnswer('answer82')">Show Answer</button>
+
+<h3>What are some targets that Alias records can point to in Route 53?</h3>
+<p id="answer83" class="answer">Alias records in Route 53 can point to the following targets:
+- Elastic Load Balancers (ELBs)
+- CloudFront Distributions
+- API Gateway endpoints
+- Elastic Beanstalk environments
+- S3 bucket websites
+- VPC Interface Endpoints
+- Global Accelerator accelerators
+- Other Route 53 records within the same hosted zone</p>
+<button onclick="toggleAnswer('answer83')">Show Answer</button>
+
+<h3>Can you set an ALIAS record for an EC2 DNS name in Route 53?</h3>
+<p id="answer84" class="answer">No, you cannot set an ALIAS record for an EC2 DNS name in Route 53. ALIAS records can only point to specific AWS resources like ELBs, CloudFront distributions, API Gateway endpoints, etc. They cannot be used to directly point to EC2 instances by their DNS names.</p>
+<button onclick="toggleAnswer('answer84')">Show Answer</button>
+
+<h3>What are the different routing policies supported by Route 53?</h3>
+<p id="answer85" class="answer">Route 53 supports the following routing policies:
+1. Simple: Used for basic routing to a single resource.
+2. Weighted: Allows traffic to be split across different resources based on assigned weights.
+3. Failover: Used for active-passive setups with a primary and secondary resource for failover scenarios.
+4. Latency-Based: Routes traffic to the resource with the lowest latency for the end user.
+5. Geolocation: Routes traffic based on the geographic location of the end user.
+6. Multi-Value Answer: Returns multiple healthy records in a random order to route traffic to multiple resources.
+7. Geoproximity: Routes traffic based on the geographic location of the end user and the resources.</p>
+<button onclick="toggleAnswer('answer85')">Show Answer</button>
+
+<h3>What happens if you don't associate a health check with a Multi-Value Answer record in Route 53?</h3>
+<p id="answer86" class="answer">If you don't associate a health check with a Multi-Value Answer record in Route 53, Route 53 will always consider the record to be healthy. Without a health check, Route 53 has no mechanism to evaluate the health of the associated resources. It will assume that all records are healthy and include them in the DNS response.</p>
+<button onclick="toggleAnswer('answer86')">Show Answer</button>
+
+<h3>How does the Multi-Value routing policy work in Route 53?</h3>
+<p id="answer87" class="answer">The Multi-Value routing policy in Route 53 works as follows:
+- When a DNS query is received, Route 53 returns multiple values/resources in the DNS response, each with the same DNS name but different IP addresses.
+- Route 53 can associate health checks with the resources, and it only includes the IP addresses of the healthy resources in the response.
+- By specifying multiple values, the DNS resolver randomly selects one of the healthy IP addresses, distributing the traffic across the available resources.
+- Up to eight healthy records can be returned for each Multi-Value query.
+- Multi-Value routing is not a substitute for having an Elastic Load Balancer (ELB), but it can be used in conjunction with ELBs to provide a simple form of load balancing.</p>
+<button onclick="toggleAnswer('answer87')">Show Answer</button>
+
+
+<h3>How does the Failover routing in Route 53 work?</h3>
+<p id="answer88" class="answer">The Failover routing in Route 53 is used for active-passive failover setups. It works as follows:
+- Two or three records are created with the same DNS name but different types: primary and secondary (and optionally, a tertiary record).
+- One record is designated as the primary and the others as failover resources.
+- Route 53 monitors the health of the primary resource using a health check.
+- When the primary resource is healthy, Route 53 responds to DNS queries with the IP address of the primary resource.
+- If the primary resource becomes unhealthy, Route 53 automatically switches the DNS response to one of the failover resources, directing traffic to the backup resource.
+- Once the primary resource becomes healthy again, Route 53 switches back to routing traffic to the primary resource.</p>
+<button onclick="toggleAnswer('answer88')">Show Answer</button>
+<h3>Are S3 buckets defined globally or regionally?</h3>
+<p id="answer89" class="answer">S3 buckets are defined at the region level, which means they are not globally defined. While S3 is a global service that can be accessed from anywhere, buckets are created within a specific region. However, you can enable cross-region replication to replicate the bucket contents to another region for redundancy or other purposes.</p>
+<button onclick="toggleAnswer('answer89')">Show Answer</button>
+<h3>When granting users/roles cross-account access to an S3 bucket, what should be used?</h3>
+<p id="answer90" class="answer">When granting users/roles cross-account access to an S3 bucket, you should use a Bucket Policy. A Bucket Policy allows you to specify fine-grained access controls for your S3 bucket, including granting access to IAM users and roles from other AWS accounts. By defining the necessary permissions in the Bucket Policy, you can securely grant cross-account access to your S3 bucket.</p>
+<button onclick="toggleAnswer('answer90')">Show Answer</button>
+<h3>What is required to enable objects replication from one S3 bucket to another S3 bucket?</h3>
+<p id="answer91" class="answer">To enable object replication from one S3 bucket to another, the following requirements must be met:
+- Versioning must be enabled in both the source and destination buckets. This ensures that all versions of objects are replicated.
+- Proper IAM permissions must be given to S3. The IAM user or role performing the replication must have the necessary permissions to access both the source and destination buckets.</p>
+<button onclick="toggleAnswer('answer91')">Show Answer</button>
+<h3>What is the difference between Cross-Region Replication (CRR) and Same-Region Replication (SRR)?</h3>
+<p id="answer92" class="answer">Cross-Region Replication (CRR) is the replication of objects across different AWS regions. It allows you to replicate objects from a source bucket in one region to a destination bucket in another region. This provides redundancy and disaster recovery capabilities.
+Same-Region Replication (SRR) is the replication of objects within the same region. It allows you to replicate objects from a source bucket to a destination bucket within the same region. SRR can be useful for scenarios where you need additional copies of data within the same region for data locality or compliance requirements.</p>
+<button onclick="toggleAnswer('answer92')">Show Answer</button>
+
+<h3>Can buckets be in different AWS accounts when using replication in S3?</h3>
+<p id="answer93" class="answer">Yes, buckets can be in different AWS accounts when using replication in S3. Cross-account replication allows you to replicate objects from a source bucket owned by one AWS account to a destination bucket owned by a different AWS account. This enables scenarios where you want to share data between accounts or implement a centralized backup strategy.</p>
+<button onclick="toggleAnswer('answer93')">Show Answer</button>
+<h3>What should you use to replicate existing objects to a different bucket on demand?</h3>
+<p id="answer94" class="answer">To replicate existing objects to a different bucket on demand, you can use S3 Batch Operations. S3 Batch Operations allows you to perform large-scale batch operations on objects in S3, including replication. With S3 Batch Operations, you can define a replication job that specifies the source bucket, destination bucket, and other parameters to replicate objects between buckets in a controlled and efficient manner.</p>
+<button onclick="toggleAnswer('answer94')">Show Answer</button>
+<h3>What are the different storage classes available in Amazon S3?</h3>
+<p id="answer95" class="answer">Amazon S3 provides the following storage classes for storing objects:
+- Amazon S3 Standard - General Purpose: The default storage class with high durability, availability, and performance.
+- Amazon S3 Standard-Infrequent Access (IA): Suitable for infrequently accessed data with lower storage costs but higher retrieval costs.
+- Amazon S3 One Zone-Infrequent Access: Similar to Standard-IA but stores data in a single availability zone, reducing costs but with a slightly lower availability.
+- Amazon S3 Glacier Instant Retrieval: Designed for long-term archival with faster data retrieval times.
+- Amazon S3 Glacier Expedited Retrieval: Designed for fast data retrieval within minutes from Glacier.
+- Amazon S3 Glacier Deep Archive: The lowest-cost storage class for long-term data archiving with longer retrieval times.
+Additionally, Amazon S3 Intelligent Tiering automatically moves objects between different storage classes based on access patterns to optimize costs.</p>
+<button onclick="toggleAnswer('answer95')">Show Answer</button>
+
+<h3>What is the difference between Amazon S3 Standard-Infrequent Access and Amazon S3 One Zone-Infrequent Access?</h3>
+<p id="answer96" class="answer">The difference between Amazon S3 Standard-Infrequent Access (IA) and Amazon S3 One Zone-Infrequent Access (One Zone-IA) lies in their availability and storage location.
+S3 Standard-IA provides 99.9% availability and is designed for infrequently accessed data. It is stored redundantly across multiple availability zones within a region to provide durability and high availability.
+
+S3 One Zone-IA provides 99.5% availability and is also designed for infrequently accessed data. However, it is stored in a single availability zone within a region, making it less resilient to the failure of that specific availability zone. One Zone-IA offers lower storage costs compared to Standard-IA, but it is recommended for use cases where data durability across multiple availability zones is not a requirement.</p>
+<button onclick="toggleAnswer('answer96')">Show Answer</button>
+
+<h3>What are the use cases for storing data in Amazon S3 One Zone-Infrequent Access?</h3>
+<p id="answer97" class="answer">Amazon S3 One Zone-Infrequent Access (One Zone-IA) is suitable for the following use cases:
+- Storing secondary backup copies of on-premises data: You can use One Zone-IA as a cost-effective storage option for keeping secondary backups of your on-premises data.
+- Cost-effective storage for data replicated from another AWS Region using S3 Cross-Region Replication: If you have replicated data from another AWS region to your current region using S3 Cross-Region Replication, you can store that data in One Zone-IA to reduce storage costs while still ensuring infrequent access availability.</p>
+<button onclick="toggleAnswer('answer97')">Show Answer</button>
+<h3>What is the purpose of Amazon S3 Glacier Storage Classes?</h3>
+<p id="answer98" class="answer">The purpose of Amazon S3 Glacier Storage Classes is data archiving. Glacier provides secure, durable, and low-cost storage for long-term data retention. It is designed for data that is accessed less frequently and has longer retrieval times. Glacier is suitable for archiving data, regulatory compliance, and data backup purposes.</p>
+<button onclick="toggleAnswer('answer98')">Show Answer</button>
+<h3>How is pricing calculated for Amazon S3 Glacier Storage Classes?</h3>
+<p id="answer99" class="answer">The pricing for Amazon S3 Glacier Storage Classes is based on two components:
+- Storage costs: The cost is calculated based on the amount of data stored in Glacier over time.
+- Object retrieval costs: If you need to retrieve data from Glacier, there are different retrieval options available (Standard and Bulk) with associated costs based on the data volume retrieved and the retrieval time.
+It's important to note that Glacier has a minimum storage duration of 90 days for most regions, and there are additional costs for data transfers out of Glacier.</p>
+<button onclick="toggleAnswer('answer99')">Show Answer</button>
+
+<h3>What is the minimum storage duration for Amazon S3 Glacier Deep Archive?</h3>
+<p id="answer100" class="answer">The minimum storage duration for Amazon S3 Glacier Deep Archive is 180 days. This means that if you store an object in Glacier Deep Archive and delete it before the 180-day period, you will still be charged for the remaining days up to the minimum storage duration.</p>
+<button onclick="toggleAnswer('answer100')">Show Answer</button>
+<h3>What is the meaning of minimum storage duration in S3 storage class?</h3>
+<p id="answer101" class="answer">The minimum storage duration in an S3 storage class refers to the minimum amount of time for which an object must be stored in that storage class. If an object is deleted before the minimum storage duration, you will still be charged a pro-rated charge equal to the storage charge for the remaining days up to the minimum storage duration. This ensures that there is a minimum commitment period for storing objects in a particular storage class.</p>
+<button onclick="toggleAnswer('answer101')">Show Answer</button>
+<h3>What are the retrieval options and their time for Amazon S3 Glacier Deep Archive?</h3>
+<p id="answer102" class="answer">Amazon S3 Glacier Deep Archive offers two retrieval options:
+- Standard: This retrieval option provides access to data within 12 hours. It is the fastest retrieval option for Glacier Deep Archive.
+- Bulk: This retrieval option provides access to data within 48 hours. It is the lowest-cost retrieval option for Glacier Deep Archive and is suitable for data that is not needed urgently.
+It's important to consider the retrieval time when planning to retrieve data from Glacier Deep Archive and choose the appropriate retrieval option based on your requirements.</p>
+<button onclick="toggleAnswer('answer102')">Show Answer</button>
+
+<h3>What are Amazon S3 Lifecycle Rules?</h3>
+<p id="answer103" class="answer">Amazon S3 Lifecycle Rules allow you to configure objects to transition to another storage class or expire (delete) after a certain time. With lifecycle rules, you can automate the process of moving objects between storage classes to optimize costs and manage data lifecycle. You can define rules based on object age, object size, prefixes, or object tags. This allows you to define specific policies for different types of
+
+    objects in your buckets.
+    
+    Lifecycle rules can be used to transition objects to Glacier for archiving, move objects to lower-cost storage classes based on access patterns, or delete objects that are no longer needed after a specified time.
+    </p>
+<button onclick="toggleAnswer('answer103')">Show Answer</button>
+
+<h3>What is S3 Requester Pays?</h3>
+<p id="answer104" class="answer">S3 Requester Pays is a feature of Amazon S3 that allows the requester, rather than the bucket owner, to pay for the cost of the request and data download from the bucket. When Requester Pays is enabled for a bucket, the requester must be authenticated in AWS and is responsible for the data transfer costs associated with accessing the bucket and downloading objects.
+
+This feature is useful in scenarios where a bucket owner wants to share data with others but doesn't want to incur the cost of data transfer. By enabling Requester Pays, the requester can directly pay for the data access charges, allowing for more flexible sharing arrangements.</p>
+<button onclick="toggleAnswer('answer104')">Show Answer</button>
+
+<h3>What is S3 Transfer Acceleration?</h3>
+<button onclick="toggleAnswer('answer479')">Show Answer</button>
+<p id="answer479"" class="answer">S3 Transfer Acceleration is a feature that increases transfer speed to and from Amazon S3 by as much as 50-500% for long-distance transfer of larger objects. S3TA improves transfer performance by routing traffic through Amazon CloudFront’s globally distributed Edge Locations and over AWS backbone networks, and by using network protocol optimizations.</p>
+
+<h3>What are S3 Byte-Range Fetches?</h3>
+<p id="answer482" class="answer">S3 Byte-Range Fetches is a feature that allows GETs to be parallelized by requesting specific byte ranges. This provides better resilience in case of failures, can be used to speed up downloads, and can retrieve only partial data, such as the head of a file.</p>
+<button onclick="toggleAnswer('answer482')">Show Answer</button>
+
+<h3>What is S3 Select?</h3>
+<p id="answer485" class="answer">S3 Select simplifies data analysis for developers working with large retailers. Instead of downloading, decompressing, and processing entire CSV files for all 200 stores, developers can use S3 Select to retrieve specific data from a single store by applying a SQL expression. S3 Select supports CSV, JSON, and Apache Parquet formats, including objects compressed with GZIP or BZIP2. The format of the results can be specified as CSV or JSON, and the delimiter for the records can be determined.</p>
+<button onclick="toggleAnswer('answer485')">Show Answer</button>
+
+<h3>What must be enabled to use MFA Delete in Amazon S3?</h3>
+<p id="answer488" class="answer">Versioning must be enabled on the bucket.</p>
+<button onclick="toggleAnswer('answer488')">Show Answer</button>
+
+<h3>Who can enable/disable MFA Delete in Amazon S3?</h3>
+<p id="answer491" class="answer">The bucket owner.</p>
+<button onclick="toggleAnswer('answer491')">Show Answer</button>
+
+<h3>What are Pre-Signed URLs in Amazon S3?</h3>
+<p id="answer494" class="answer">Pre-Signed URLs in Amazon S3 are URLs that are generated using the S3 Console, AWS CLI, or SDK. They allow users to share access to specific objects in their S3 buckets for a limited time, with the URL expiration time defined by the user.</p>
+<button onclick="toggleAnswer('answer494')">Show Answer</button>
+
+<h3>What is S3 Object Lock?</h3>
+<p id="answer497" class="answer">S3 Object Lock is a feature in Amazon S3 that adopts a WORM (Write Once Read Many) model for data retention and compliance. It allows users to block an object version deletion for a specified amount of time and enforce retention policies.</p>
+<button onclick="toggleAnswer('answer497')">Show Answer</button>
+
+<h3>What is S3 Object Lambda?</h3>
+<p id="answer500" class="answer">S3 Object Lambda is a feature in Amazon S3 that allows users to change an object before it is retrieved by the caller application using AWS Lambda functions. It can be used for redacting personally identifiable information, converting data formats, resizing and watermarking images, and more.</p>
+<button onclick="toggleAnswer('answer500')">Show Answer</button>
+
+<h3>How can you restrict access to your CloudFront distribution based on the user's location?</h3>
+<p id="answer503" class="answer">You can use CloudFront Geo Restriction to restrict access to your distribution. You can either create an allowlist of approved countries or a blocklist of banned countries using a 3rd party Geo-IP database.</p>
+<button onclick="toggleAnswer('answer503')">Show Answer</button>
+
+<h3>What is the purpose of CloudFront Price Classes and what are the price classes?</h3>
+<p id="answer506" class="answer">
+* You can reduce the number of edge locations for cost reduction.
+* Three price classes:
+1. Price Class All: all regions — best performance.
+2. Price Class 200: most regions, but excludes the most expensive regions.
+3. Price Class 100: only the least expensive regions.
+</p>
+<button onclick="toggleAnswer('answer506')">Show Answer</button>
+
+<h3>What is AWS Global Accelerator?</h3>
+<p id="answer515" class="answer">AWS Global Accelerator is a service that enables you to leverage the AWS internal network to route traffic to your application. It creates two Anycast IP addresses for your application, which send traffic directly to Edge Locations, which then send the traffic to your application.</p>
+<button onclick="toggleAnswer('answer515')">Show Answer</button>
+
+<h3>How does AWS Global Accelerator differ from CloudFront?</h3>
+<p id="answer518" class="answer">Both AWS Global Accelerator and CloudFront use the AWS global network and its edge locations around the world, and both integrate with AWS Shield for DDoS protection. However, CloudFront is designed to improve performance for cacheable and dynamic content, while Global Accelerator improves performance for a wide range of applications over TCP or UDP. Global Accelerator is a good fit for non-HTTP use cases, such as gaming, IoT, or Voice over IP, and HTTP use cases that require static IP addresses or fast regional failover.</p>
+<button onclick="toggleAnswer('answer518')">Show Answer</button>
+
+<h3>What are the three different AWS Snowball devices available?</h3>
+<p id="answer521" class="answer">Snowcone (8 TB HDD/14 TB SSD), Snowball Edge (80 TB), and Snowmobile (<100 PB).</p>
+<button onclick="toggleAnswer('answer521')">Show Answer</button>
+
+<h3>What is AWS OpsHub used for?</h3>
+<p id="answer524" class="answer">The Snow Family devices offer a user-friendly tool, AWS OpsHub for Snow Family, that you can use to manage your devices and local AWS services. You use AWS OpsHub on a client computer to perform tasks such as unlocking and configuring single or clustered devices, transferring files, and launching and managing instances running on Snow Family devices.</p>
+<button onclick="toggleAnswer('answer524')">Show Answer</button>
+
+<h3>Can Snowball import data directly into Glacier?</h3>
+<p id="answer527" class="answer">No, you must use Amazon S3 first, in combination with an S3 lifecycle policy.</p>
+<button onclick="toggleAnswer('answer527')">Show Answer</button>
+
+<h3>What are the deployment options for FSx File System?</h3>
+<p id="answer530" class="answer">
+* Scratch File System, which is temporary storage for short-term processing.
+* Persistent File System, which is long-term storage for sensitive data.
+</p>
+<button onclick="toggleAnswer('answer530')">Show Answer</button>
+
+<h3>What is AWS Storage Gateway used for?</h3>
+<p id="answer536" class="answer">AWS Storage Gateway is used to expose S3 data on-premises. It is used to connect an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS storage infrastructure.</p>
+<button onclick="toggleAnswer('answer536')">Show Answer</button>
+
+<h3>S3 is a proprietary storage technology (unlike EFS / NFS), so how do you expose the S3 data on-premises?</h3>
+<p id="answer539" class="answer">AWS Storage Gateway.</p>
+<button onclick="toggleAnswer('answer539')">Show Answer</button>
+
+<h3>What are the types of AWS Storage Gateway?</h3>
+<p id="answer542" class="answer">
+* S3 File Gateway.
+* FSx File Gateway.
+* Volume Gateway.
+* Tape Gateway.
+</p>
+<button onclick="toggleAnswer('answer542')">Show Answer</button>
+
+<h3>What is the Amazon S3 File Gateway?</h3>
+<p id="answer550" class="answer">Amazon S3 File Gateway offers SMB or NFS-based access to data in Amazon S3 with local caching. A company can deploy an Amazon S3 File Gateway in their on-premises environment. The File Gateway provides a virtualized file system interface that allows applications and users to access data stored in Amazon S3 as if it were a local file share. It seamlessly integrates with existing file-based applications and workflows, requiring minimal changes.</p>
+<button onclick="toggleAnswer('answer550')">Show Answer</button>
+
+<h3>What is the Volume Gateway?</h3>
+<p id="answer553" class="answer">The Volume Gateway is a type of AWS Storage Gateway that provides block storage using the iSCSI protocol backed by S3. It has two modes: cached volumes and stored volumes.</p>
+<button onclick="toggleAnswer('answer553')">Show Answer</button>
+
+<h3>What is AWS DataSync?</h3>
+<p id="answer556" class="answer">AWS DataSync is a service that enables the movement of large amounts of data to and from on-premises/other clouds to AWS and between different AWS storage services. It can synchronize to Amazon S3, Amazon EFS, and Amazon FSx, and it preserves file permissions and metadata. File permissions and metadata are preserved (NFS POSIX, SMB...).</p>
+<button onclick="toggleAnswer('answer556')">Show Answer</button>
+
+<h3>If you want to use DataSync but don't have the network capacity to do so, what should you use?</h3>
+<p id="answer559" class="answer">If you don't have the network capacity to use DataSync, you should consider using the AWS Snowcone device. The Snowcone device comes with the DataSync agent pre-installed on it.</p>
+<button onclick="toggleAnswer('answer559')">Show Answer</button>
+
+<h3>What is the message visibility timeout in SQS, and what happens when a message is not processed within this time?</h3>
+<p id="answer562" class="answer">The message visibility timeout is the time during which a message becomes invisible to other consumers after it is polled by a consumer. By default, the message visibility timeout is 30 seconds. If a message is not processed within this time, it will become visible in SQS again and could be processed twice.</p>
+<button onclick="toggleAnswer('answer562')">Show Answer</button>
+
+<h3>What is long polling in SQS, and how does it benefit an application's efficiency and latency?</h3>
+<p id="answer565" class="answer">Long polling is an option for consumers to wait for messages to arrive when there are no messages in the queue. This decreases the number of API calls made to SQS, increasing the efficiency and latency of an application.</p>
+<button onclick="toggleAnswer('answer565')">Show Answer</button>
+
+<h3>What is an SNS FIFO topic, and what types of queues can subscribe to it?</h3>
+<p id="answer568" class="answer">An SNS FIFO topic is a topic that supports message ordering and exactly-once processing. Only SQS FIFO queues can subscribe to it.</p>
+<button onclick="toggleAnswer('answer568')">Show Answer</button>
+
+<h3>What is message filtering in SNS?</h3>
+<p id="answer571" class="answer">Message filtering is a feature in SNS that allows you to filter the messages that are sent to subscribers based on message attributes. Subscribers can set filter policies that define the message attributes they are interested in, and only messages that match the filter policy are sent to the subscriber.</p>
+<button onclick="toggleAnswer('answer571')">Show Answer</button>
+
+<h3>What are the key features of Amazon MQ?</h3>
+<p id="answer574" class="answer">
+* Compatibility with industry-standard protocols (AMQP, MQTT, OpenWire, STOMP).
+* Managed message broker service.
+* Automatically provisioned ActiveMQ or RabbitMQ.
+* Message persistence.
+* Security features (VPC, IAM).
+</p>
+<button onclick="toggleAnswer('answer574')">Show Answer</button>
+
+<h3>What is the function of Kinesis Data Streams?</h3>
+<p id="answer585" class="answer">Kinesis Data Streams captures, processes, and stores data streams.</p>
+<button onclick="toggleAnswer('answer585')">Show Answer</button>
+
+<h3>What is the purpose of Kinesis Data Firehose?</h3>
+<p id="answer588" class="answer">Kinesis Data Firehose is used to load streaming data into data lakes, data stores, and analytics tools. It is a fully managed service that automatically scales to match the throughput of the data and requires no ongoing administration.</p>
+<button onclick="toggleAnswer('answer588')">Show Answer</button>
+
+<h3>What is Kinesis Data Analytics used for?</h3>
+<p id="answer591" class="answer">Kinesis Data Analytics is used to process and analyze streaming data using SQL or Java. It allows you to build real-time applications and gain actionable insights from your streaming data.</p>
+<button onclick="toggleAnswer('answer591')">Show Answer</button>
+
+<h3>What is the purpose of Kinesis Video Streams?</h3>
+<p id="answer594" class="answer">Kinesis Video Streams is used to capture, process, and store video streams for analytics and machine learning. It enables you to securely stream video from connected devices to AWS for analysis and storage.</p>
+<button onclick="toggleAnswer('answer594')">Show Answer</button>
+
+<h3>What is the function of Kinesis Data Firehose?</h3>
+<p id="answer597" class="answer">Kinesis Data Firehose loads data streams into AWS data stores.</p>
+<button onclick="toggleAnswer('answer597')">Show Answer</button>
+
+<h3>What is the function of Kinesis Data Analytics?</h3>
+<p id="answer600" class="answer">Kinesis Data Analytics analyzes data streams with <b>SQL</b> or <b>Apache Flink</b>.</p>
+<button onclick="toggleAnswer('answer600')">Show Answer</button>
+
+<h3>What is the function of Kinesis Video Streams?</h3>
+<p id="answer603" class="answer">Kinesis Video Streams captures, processes, and stores video streams.</p>
+<button onclick="toggleAnswer('answer603')">Show Answer</button>
+
+<h3>What are the two capacity modes for Kinesis Data Streams, and how do they differ?</h3>
+<p id="answer606" class="answer">The two capacity modes for Kinesis Data Streams are:</p>
+<ul>
+  <li>Provisioned mode: The number of shards is chosen by the user and scales manually or using auto scaling policies.</li>
+  <li>On-demand mode: There is no need to provision or manage the capacity as it scales automatically based on observed throughput peaks during the last 30 days.</li>
+</ul>
+<button onclick="toggleAnswer('answer606')">Show Answer</button>
+
+<h3>How can you control access and authorization for Kinesis Data Streams?</h3>
+<p id="answer613" class="answer">Access and authorization for Kinesis Data Streams are controlled using IAM policies.</p>
+<button onclick="toggleAnswer('answer613')">Show Answer</button>
+
+<h3>What encryption methods are available for Kinesis Data Streams?</h3>
+<p id="answer616" class="answer">Kinesis Data Streams supports encryption in transit using HTTPS endpoints and encryption at rest using KMS.</p>
+<button onclick="toggleAnswer('answer616')">Show Answer</button>
+
+<h3>What are the available destinations for Kinesis Data Firehose?</h3>
+<div id="answer619" class="answer">The available destinations for Kinesis Data Firehose are:
+<ul>
+  <li>Amazon OpenSearch Service</li>
+  <li>Amazon OpenSearch Serverless</li>
+  <li>Amazon Redshift</li>
+  <li>Amazon S3</li>
+  <li>Coralogix</li>
+  <li>Datadog</li>
+  <li>Dynatrace</li>
+  <li>Elastic</li>
+  <li>HTTP Endpoint</li>
+  <li>Honeycomb</li>
+  <li>Logic Monitor</li>
+  <li>Logz.io</li>
+  <li>MongoDB Cloud</li>
+  <li>New Relic</li>
+  <li>Splunk</li>
+  <li>Sumo Logic</li>
+</ul></div>
+<button onclick="toggleAnswer('answer619')">Show Answer</button>
+
+<h3>How is data charged for Kinesis Data Firehose?</h3>
+<p id="answer640" class="answer">You pay for the data going through the service.</p>
+<button onclick="toggleAnswer('answer640')">Show Answer</button>
+
+<h3>Does Kinesis Data Firehose support custom data transformations?</h3>
+<p id="answer643" class="answer">Yes, Kinesis Data Firehose supports custom data transformations using AWS Lambda.</p>
+<button onclick="toggleAnswer('answer643')">Show Answer</button>
+
+<h3>What is the maximum amount of consumers in parallel for Kinesis Data Streams?</h3>
+<p id="answer646" class="answer">The maximum amount of consumers in parallel for Kinesis Data Streams is 5.</p>
+<button onclick="toggleAnswer('answer646')">Show Answer</button>
+
+<h3>What is the maximum amount of messages that can be received per second for SQS FIFO?</h3>
+<p id="answer649" class="answer">The maximum amount of messages that can be received per second for SQS FIFO is 300 messages per second (or 3000 if using batching, 10 messages per operation (maximum)).</p>
+<button onclick="toggleAnswer('answer649')">Show Answer</button>
+<h3>What's Fanout in SNS?</h3>
+<p id="answer652" class="answer">"Fanout" is when a message published to an SNS topic is replicated and pushed to multiple endpoints, such as Kinesis Data Firehose delivery streams, Amazon SQS queues, HTTP(S) endpoints, and Lambda functions. This allows for parallel asynchronous processing.</p>
+<button onclick="toggleAnswer('answer652')">Show Answer</button>
+
+<h3>How does Amazon MQ achieve high availability?</h3>
+<p id="answer655" class="answer">To achieve high availability, Amazon MQ requires you to define Amazon <b>EFS</b> as your backend storage. This allows the standby to be mounted onto EFS and have the same data as the active queue, ensuring that failover can happen correctly.</p>
+<button onclick="toggleAnswer('answer655')">Show Answer</button>
+
+<h3>What is the purpose of the ECS Cluster Capacity Provider in AWS?</h3>
+<p id="answer658" class="answer">The ECS Cluster Capacity Provider is used to automatically provision and scale the infrastructure for your ECS Tasks. It is paired with an Auto Scaling Group and can add EC2 Instances when you're missing capacity (CPU, RAM, etc.).</p>
+<button onclick="toggleAnswer('answer658')">Show Answer</button>
+
+<h3>What are the different node types available for Amazon EKS?</h3>
+<p id="answer661" class="answer">The different node types available for Amazon EKS are:
+<ul>
+<li>Managed Node Groups</li>
+<li>Self-Managed Nodes</li>
+<li>AWS Fargate</li>
+</ul></p>
+<button onclick="toggleAnswer('answer661')">Show Answer</button>
+
+<h3>What are some AWS serverless services?</h3>
+<p id="answer669" class="answer">Some AWS serverless services include:
+<ul>
+<li>AWS Lambda</li>
+<li>DynamoDB</li>
+<li>AWS Cognito</li>
+<li>AWS API Gateway</li>
+<li>Amazon S3</li>
+<li>AWS SNS &amp; SQS</li>
+<li>AWS Kinesis Data Firehose</li>
+<li>Aurora Serverless</li>
+<li>Step Functions</li>
+<li>ECS Fargate</li>
+</ul></p>
+<button onclick="toggleAnswer('answer669')">Show Answer</button>
+
+<h3>What is CloudFront Functions and how is it used?</h3>
+<p id="answer684" class="answer">CloudFront Functions are lightweight functions written in JavaScript used for high-scale, latency-sensitive CDN customizations. They are used to change viewer requests and responses, either after CloudFront receives a request from a viewer (Viewer Request) or before CloudFront forwards the response to the viewer (Viewer Response). CloudFront Functions are a native feature of CloudFront, so the code can be entirely managed within CloudFront.</p>
+<button onclick="toggleAnswer('answer684')">Show Answer</button>
+
+<h3>What's the maximum execution time in AWS Lambda?</h3>
+<p id="answer687" class="answer">The maximum execution time in AWS Lambda is 900 seconds (15 minutes).</p>
+<button onclick="toggleAnswer('answer687')">Show Answer</button>
+
+<h3>What is Lambda@Edge and how is it used?</h3>
+<p id="answer690" class="answer">Lambda@Edge is used to change CloudFront requests and responses using Lambda functions written in Node.js or Python.</p>
+<button onclick="toggleAnswer('answer690')">Show Answer</button>
+
+<h3>Can RDS Proxy be publicly accessible?</h3>
+<p id="answer693" class="answer">No, RDS Proxy is never publicly accessible.</p>
+<button onclick="toggleAnswer('answer693')">Show Answer</button>
+
+<h3>What is the advantage of using DynamoDB Accelerator (DAX)?</h3>
+<p id="answer696" class="answer">The advantages of using DynamoDB Accelerator (DAX) include:
+<ul>
+<li>Fully-managed, highly available, seamless in-memory cache for DynamoDB</li>
+<li>Helps solve read congestion by caching</li>
+<li>Microseconds latency for cached data</li>
+<li>Doesn't require application logic modification (compatible with existing DynamoDB APIs)</li>
+</ul></p>
+<button onclick="toggleAnswer('answer696')">Show Answer</button>
+
+<h3>Which capacity mode is more expensive in DynamoDB: Provisioned Mode (default) or On-Demand Mode?</h3>
+<p id="answer705" class="answer">On-Demand Mode is more expensive in DynamoDB.</p>
+<button onclick="toggleAnswer('answer705')">Show Answer</button>
+
+<h3>We want a capacity mode that can handle unpredictable workloads and steep sudden spikes in DynamoDB. Which mode should we choose?</h3>
+<p id="answer708" class="answer">For unpredictable workloads and steep sudden spikes, you should choose On-Demand Mode in DynamoDB.</p>
+<button onclick="toggleAnswer('answer708')">Show Answer</button>
+
+<h3>What is the advantage of using DynamoDB Global Tables?</h3>
+<p id="answer711" class="answer">The advantage of using DynamoDB Global Tables is that it allows a DynamoDB table to be accessed with low latency in multiple regions, with active-active replication. This means that applications can read and write to the table in any region.</p>
+<button onclick="toggleAnswer('answer711')">Show Answer</button>
+
+<h3>We want to automatically delete items in a DynamoDB after an expiry timestamp due to regulatory obligations. What should we use?</h3>
+<p id="answer714" class="answer">To automatically delete items in a DynamoDB after an expiry timestamp, you can use Time to Live (TTL) feature.</p>
+<button onclick="toggleAnswer('answer714')">Show Answer</button>
+
+<h3>What are the different table classes available in DynamoDB?</h3>
+<p id="answer717" class="answer">The different table classes available in DynamoDB are:
+<ul>
+<li>Standard</li>
+<li>Infrequent Access (IA)</li>
+</ul>
+<br>The Standard class is designed for frequently accessed data and has a higher price per GB than the IA class, which is designed for infrequently accessed data.</p>
+<button onclick="toggleAnswer('answer717')">Show Answer</button>
+
+<h3>I want a database that can rapidly evolve schemas.</h3>
+<p id="answer725" class="answer">DynamoDB is a database that can rapidly evolve schemas.</p>
+<button onclick="toggleAnswer('answer725')">Show Answer</button>
+
+<h3>What is AWS API Gateway?</h3>
+<p id="answer727" class="answer">"a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the &quot;front door&quot; for applications to access data, business logic, or functionality from your backend services. Using API Gateway, you can create RESTful APIs and WebSocket APIs that enable real-time two-way communication applications. API Gateway supports containerized and serverless workloads, as well as web applications.<br><ul><li>accepting and processing up to hundreds of thousands of concurrent API calls</li><li>CORS support</li><li>&nbsp;authorization and access control</li><li>monitoring<br></li></ul></p>
+<button onclick="toggleAnswer('answer727')">Show Answer</button>
+
+<h3>What protocol does API Gateway support?</h3>
+<p id="answer730" class="answer">HTTP and websocket</p>
+<button onclick="toggleAnswer('answer730')">Show Answer</button>
+
+<h3>Can AWS API Gateway handle different environments (prod, dev, test)?</h3>
+<p id="answer733" class="answer">Yes</p>
+<button onclick="toggleAnswer('answer733')">Show Answer</button>
+
+<h3>How does AWS API Gateway protect against request throttling?</h3>
+<p id="answer736" class="answer">Clients may receive&nbsp;<code>429 Too Many Requests</code>&nbsp;when request submissions exceed the steady-state request rate and burst limits</p>
+<button onclick="toggleAnswer('answer736')">Show Answer</button>
+
+<h3>Can API Gateway transform and validate requests and responses?</h3>
+<p id="answer739" class="answer">Yes</p>
+<button onclick="toggleAnswer('answer739')">Show Answer</button>
+
+<h3>Can API Gateway cache API responses?</h3>
+<p id="answer742" class="answer">Yes, API Gateway can cache API responses to improve performance.</p>
+<button onclick="toggleAnswer('answer742')">Show Answer</button>
+
+<h3>What are the three endpoint types available in API Gateway?</h3>
+<p id="answer745" class="answer"><ul><li>Edge-Optimized</li><li>Regional</li><li>Private.</li></ul></p>
+<button onclick="toggleAnswer('answer745')">Show Answer</button>
+
+<h3>What is the Regional endpoint type in AWS API Gateway?</h3>
+<p id="answer748" class="answer">"A&nbsp;<em><a href=""https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-basic-concept.html#apigateway-definition-regional-api-endpoint"">regional API endpoint</a></em>&nbsp;is intended for clients in the same region. When a client running on an EC2 instance calls an API in the same region, or when an API is intended to serve a small number of clients with high demands, a regional API reduces connection overhead."</p>
+<button onclick="toggleAnswer('answer748')">Show Answer</button>
+
+<h3>What are the authentication mechanisms available in API Gateway?</h3>
+<p id="answer751" class="answer"><ul><li><b>&nbsp;IAM Roles</b></li><li><b>Cognito</b></li><li><b>Lambda authorizers</b></li></ul></p>
+<button onclick="toggleAnswer('answer751')">Show Answer</button>
+
+<h3>What is the certificate requirement for the Edge-Optimized endpoint type?</h3>
+<p id="answer754" class="answer">For the Edge-Optimized endpoint type, the certificate must be in the <b>us-east-1 region</b>.</p>
+<button onclick="toggleAnswer('answer754')">Show Answer</button>
+
+<h3>What is the certificate requirement for Regional endpoint type in API Gateway?</h3>
+<p id="answer757" class="answer"><div><div><div><div><div><div><div>For Regional endpoint type, the certificate must be in the same region as the API Gateway.</div></div></div></div></div></div></div></p>
+<button onclick="toggleAnswer('answer757')">Show Answer</button>
+
+<h3>What is AWS Step Functions?</h3>
+<p id="answer762" class="answer">
+AWS Step Functions is a visual workflow service that allows developers to use AWS services to build distributed applications, automate processes, orchestrate microservices, and create data and machine learning (ML) pipelines.
+</p>
+<button onclick="toggleAnswer('answer762')">Show Answer</button>
+
+<h3>Which AWS resources does Cognito User Pools integrate with?</h3>
+<p id="answer762" class="answer">ALB and API gateway</p>
+<button onclick="toggleAnswer('answer762')">Show Answer</button>
+
+<h3>What is RDBMS and what are some examples of databases that fall under this category?</h3>
+<p id="answer765" class="answer">RDBMS stands for Relational Database Management System and is used for Online Transaction Processing (OLTP) and supports SQL queries. Some examples of databases that fall under this category are RDS and Aurora.</p>
+<button onclick="toggleAnswer('answer765')">Show Answer</button>
+
+<h3>What is a NoSQL database and what are some examples of databases that fall under this category?</h3>
+<p id="answer768" class="answer">A NoSQL database is a non-relational database that does not use SQL queries. Examples of databases that fall under this category are DynamoDB (~JSON) ElastiCache (key/value pairs), Neptune (graphs), DocumentDB (for MongoDB), Keyspaces (for Apache Cassandra)</p>
+<button onclick="toggleAnswer('answer768')">Show Answer</button>
+
+<h3>What is Amazon Neptune and what is it used for?</h3>
+<p id="answer771" class="answer">Amazon Neptune is a fully managed graph database used to display relationships between data.</p>
+<button onclick="toggleAnswer('answer771')">Show Answer</button>
+
+<h3>What is Amazon QLDB and what is it used for?</h3>
+<p id="answer774" class="answer">Amazon QLDB stands for Quantum Ledger Database and is used to review the history of all the changes made to your application data over time. It is used for financial transactions.</p>
+<button onclick="toggleAnswer('answer774')">Show Answer</button>
+
+<h3>What is Amazon Timestream and what is it used for?</h3>
+<p id="answer777" class="answer">Amazon Timestream is a fully managed, fast, scalable, and serverless time series database used to store and analyze trillions of events per day.</p>
+<button onclick="toggleAnswer('answer777')">Show Answer</button>
+
+<h3>What is Amazon Athena and what is it used for?</h3>
+<p id="answer780" class="answer">Amazon Athena is a serverless query service (SQL) used to analyze data stored in Amazon S3.</p>
+<button onclick="toggleAnswer('answer780')">Show Answer</button>
+
+<h3>How can you improve performance in Amazon Athena?</h3>
+<p id="answer783" class="answer">By using <b>columnar data</b>, <b>compressing data</b>, <b>partitioning datasets in S3</b>, and <b>using larger files</b>.</p>
+<button onclick="toggleAnswer('answer783')">Show Answer</button>
+
+<h3>What is Redshift and what is it used for?</h3>
+<p id="answer786" class="answer">Redshift is a <b>data warehouse</b> product used for Online Analytical Processing (OLAP) and is used for business intelligence and analytics.</p>
+<button onclick="toggleAnswer('answer786')">Show Answer</button>
+
+<h3>What should you use to convert your data on S3 to Parquet or ORC (columnar data for Athena)?</h3>
+<p id="answer789" class="answer">Use Glue to convert your data to Parquet or ORC.</p>
+<button onclick="toggleAnswer('answer789')">Show Answer</button>
+
+<h3>What is Redshift Spectrum?</h3>
+<p id="answer792" class="answer">Redshift Spectrum is a service by Amazon that enables users to query data stored in S3 without the need to load it into a Redshift cluster. The query is submitted to thousands of Redshift Spectrum nodes.</p>
+<button onclick="toggleAnswer('answer792')">Show Answer</button>
+
+<h3>What is Amazon EMR?</h3>
+<p id="answer795" class="answer">Amazon EMR (Elastic MapReduce) is a service that helps create <b>Hadoop clusters</b> to analyze and process large amounts of data. The clusters can be made up of hundreds of EC2 instances and come bundled with Apache Spark, HBase, Presto, Flink, etc. EMR takes care of all the provisioning and configuration and is also integrated with Spot instances and auto-scaling.</p>
+<button onclick="toggleAnswer('answer795')">Show Answer</button>
+
+<h3>What are the node types in Amazon EMR, and what are the purchasing options?</h3>
+<p id="answer798" class="answer">Amazon EMR has three types of nodes: Master Node, Core Node, and Task Node. The purchasing options for EMR are On-demand, Reserved (min 1 year), and Spot instances.</p>
+<button onclick="toggleAnswer('answer798')">Show Answer</button>
+
+<h3>What is Amazon QuickSight?</h3>
+<p id="answer801" class="answer">Amazon QuickSight is a serverless machine learning-powered business intelligence service that allows users to <b>create interactive dashboards</b>. It is fast, scalable, embeddable, and has per-session pricing. QuickSight is integrated with RDS, Aurora, Athena, Redshift, S3, etc.</p>
+<button onclick="toggleAnswer('answer801')">Show Answer</button>
+
+<h3>What is AWS Glue?</h3>
+<p id="answer804" class="answer">AWS Glue is a managed extract, transform, and load (<b>ETL</b>) service that helps users prepare and transform data for analytics.</p>
+<button onclick="toggleAnswer('answer804')">Show Answer</button>
+
+<h3>What are Glue Job Bookmarks?</h3>
+<p id="answer807" class="answer">Prevent re-processing old data.</p>
+<button onclick="toggleAnswer('answer807')">Show Answer</button>
+
+<h3>What is AWS Lake Formation?</h3>
+<p id="answer810" class="answer">AWS Lake Formation is a fully managed service that allows users to set up a central data lake in just a few days. It helps discover, cleanse, transform, and ingest data into the data lake while automating many complex manual steps such as collecting, cleansing, moving, and cataloging data. Users can combine structured and unstructured data in the data lake. AWS Lake Formation is <b>built on top of AWS Glue</b> and offers fine-grained access control for applications, including row and column-level control.</p>
+<button onclick="toggleAnswer('answer810')">Show Answer</button>
+
+<h3>What are Kinesis Data Analytics Use cases?</h3>
+<p id="answer813" class="answer">Kinesis Data Analytics is useful for time-series analytics, real-time dashboards, and real-time metrics.</p>
+<button onclick="toggleAnswer('answer813')">Show Answer</button>
+
+<h3>What is Kinesis Data Analytics for Apache Flink?</h3>
+<p id="answer816" class="answer">Kinesis Data Analytics for Apache Flink allows users to process and analyze streaming data using Flink (Java, Scala, or SQL). It enables users to run any Apache Flink application on a managed cluster on AWS, including provisioning compute resources, parallel computation, automatic scaling, and application backups. <b>Flink does not read from Firehose and instead should use Kinesis Analytics for SQL.</b></p>
+<button onclick="toggleAnswer('answer816')">Show Answer</button>
+
+<h3>What is Amazon Managed Streaming for Apache Kafka (Amazon MSK)?</h3>
+<p id="answer819" class="answer">Amazon MSK is a <b>fully managed Apache Kafka service</b> on AWS. It allows users to create, update, and delete clusters and creates and manages Kafka brokers and Zookeeper nodes. Users can deploy the MSK cluster in their VPC with multi-AZ for high availability and automatic recovery from common Apache Kafka failures. MSK stores data on EBS volumes for as long as needed. MSK also offers MSK Serverless, which allows users to run Apache Kafka on MSK without managing the capacity.</p>
+<button onclick="toggleAnswer('answer819')">Show Answer</button>
+
+<h3>What's Amazon EventBridge?</h3>
+<p id="answer822" class="answer">EventBridge is a serverless service that uses events to connect application components together, making it easier for you to build scalable event-driven applications. Use it to <b>route events</b> from sources such as home-grown applications, AWS services, and third-party software to consumer applications across your organization. EventBridge provides a simple and consistent way to ingest, filter, transform, and deliver events so you can build new applications quickly. EventBridge event buses are well suited for <b>many-to-many routing of events between event-driven services.</b></p>
+<button onclick="toggleAnswer('answer822')">Show Answer</button>
+
+<h3>What is CloudWatch Container Insights?</h3>
+<p id="answer825" class="answer">CloudWatch Container Insights is a service that collects, aggregates, and summarizes metrics and logs from containers. It is available for containers on Amazon Elastic Container Service (Amazon ECS), Amazon Elastic Kubernetes Services (Amazon EKS), Kubernetes platforms on EC2, and Fargate (both for ECS and EKS). <b>In Amazon EKS and Kubernetes, CloudWatch Insights use a containerized version of the CloudWatch Agent to discover containers.</b></p>
+<button onclick="toggleAnswer('answer825')">Show Answer</button>
+
+<h3>What is CloudWatch Contributor Insights?</h3>
+<p id="answer828" class="answer">CloudWatch Contributor Insights is a service that analyzes log data and creates time series that display contributor data. Users can see metrics about the top-N contributors, the total number of unique contributors, and their usage. This helps users find top talkers and understand who or what is impacting system performance. CloudWatch Contributor Insights works for any AWS-generated logs (VPC, DNS, etc.) and can help users <b>find bad hosts</b>, <b>identify the heaviest network users</b>, or <b>find the URLs that generate the most errors.</b></p>
+<button onclick="toggleAnswer('answer828')">Show Answer</button>
+
+<h3>What are the two types of events that can be recorded by CloudTrail?</h3>
+<p id="answer831" class="answer">
+    The two types of events that can be recorded by CloudTrail are:
+<ul>
+  <li>Management events (default): These events provide information about management operations performed on resources in your AWS account, such as when an IAM user is created or an EC2 instance is launched.</li>
+  <li>Data events (Additional charges apply for data events): These events provide information about resource operations performed on or within a resource, such as an S3 object being accessed or modified.</li>
+</ul>
+</p>
+<button onclick="toggleAnswer('answer831')">Show Answer</button>
+
+<h3>What are Data Events in CloudTrail?</h3>
+<p id="answer836" class="answer">Data events in CloudTrail are events that are generated when data is accessed or modified, such as Amazon S3 object-level activity or AWS Lambda function execution activity.</p>
+<button onclick="toggleAnswer('answer836')">Show Answer</button>
+
+<h3>Are Data Events in CloudTrail logged by default?</h3>
+<p id="answer839" class="answer">No, Data Events in CloudTrail are not logged by default. You need to enable data event logging to start recording them.</p>
+<button onclick="toggleAnswer('answer839')">Show Answer</button>
+
+<h3>What are CloudTrail Insights Events?</h3>
+<p id="answer842" class="answer">CloudTrail Insights Events enable CloudTrail to detect unusual activity in your account, such as inaccurate resource provisioning, hitting service limits, bursts of AWS IAM actions, and gaps in periodic maintenance activity.</p>
+<button onclick="toggleAnswer('answer842')">Show Answer</button>
+
+<h3>How does CloudTrail Insights detect unusual activity?</h3>
+<p id="answer845" class="answer">CloudTrail Insights detects unusual activity by analyzing normal management events to create a baseline and then continuously analyzing write events to detect unusual patterns. Anomalies appear in the CloudTrail console, and the event is sent to Amazon S3 for further analysis.</p>
+<button onclick="toggleAnswer('answer845')">Show Answer</button>
+
+<h3>How long are CloudTrail events stored?</h3>
+<p id="answer848" class="answer">CloudTrail events are stored for 90 days by default, but you can extend the retention period or archive events to an S3 bucket for longer-term storage.</p>
+<button onclick="toggleAnswer('answer848')">Show Answer</button>
+
+<h3>What is AWS Snowball?</h3>
+<p id="answer851" class="answer">AWS Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud. It addresses common challenges with large-scale data transfers, including high network costs, long transfer times, and security concerns.</p>
+<button onclick="toggleAnswer('answer851')">Show Answer</button>
+
+<h3>What is AWS Snowball Edge?</h3>
+<p id="answer854" class="answer">AWS Snowball Edge is a <b>data transfer device</b> with on-board storage and compute capabilities. It can transport petabytes of data into and out of AWS, perform local data processing and edge-computing workloads, and support storage and data transfer use cases in austere, hostile, or disconnected environments. Snowball Edge can be used to provide temporary storage, run data-intensive applications, and perform data analysis locally with AWS services.</p>
+<button onclick="toggleAnswer('answer854')">Show Answer</button>
+
+<h3>What is AWS Snowmobile?</h3>
+<p id="answer857" class="answer">AWS Snowmobile is an <b>exabyte-scale data transfer service</b> used to transport extremely large amounts of data (up to 100PB) to AWS. It is a secure, ruggedized shipping container pulled by a semi-trailer truck that AWS delivers to your data center. You can transfer data at speeds of up to 1TB per second, and the data is automatically encrypted.</p>
+<button onclick="toggleAnswer('answer857')">Show Answer</button>
+
+<h3>How can CloudTrail events be retained beyond the default 90-day period?</h3>
+<p id="answer860" class="answer">CloudTrail events can be retained beyond the default 90-day period by logging them to Amazon S3.</p>
+<button onclick="toggleAnswer('answer860')">Show Answer</button>
+
+<h3>What is AWS Config?</h3>
+<p id="answer863" class="answer">AWS Config is a service that helps with auditing and recording compliance of your AWS resources, as well as recording configurations and changes over time.</p>
+<button onclick="toggleAnswer('answer863')">Show Answer</button>
+
+<h3>To answer the following questions, which service should I use?
+    <ul>
+        <li>Is there unrestricted SSH access to my security groups?</li>
+        <li>Do my buckets have any public access?</li>
+        <li>How has my ALB configuration changed over time?</li>
+      </ul>
+</h3>
+<p id="answer866" class="answer">
+    AWS Config
+</p>
+<button onclick="toggleAnswer('answer866')">Show Answer</button>
+
+<h3>Is AWS Config a per-region service?</h3>
+<p id="answer876" class="answer">Yes</p>
+<button onclick="toggleAnswer('answer876')">Show Answer</button>
+
+<h3>Can AWS Config be aggregated across regions and accounts?</h3>
+<p id="answer879" class="answer">Yes</p>
+<button onclick="toggleAnswer('answer879')">Show Answer</button>
+
+<h3>Can AWS Config Rules prevent actions from happening?</h3>
+<p id="answer882" class="answer">No</p>
+<button onclick="toggleAnswer('answer882')">Show Answer</button>
+
+<h3>How can non-compliant resources be remediated using AWS Config Rules?</h3>
+<p id="answer885" class="answer">Non-compliant resources can be remediated using SSM Automation Documents, which can be AWS-Managed Automation Documents or custom Automation Documents that invoke Lambda functions.</p>
+<button onclick="toggleAnswer('answer885')">Show Answer</button>
+
+<h3>How can you receive notifications for non-compliant resources in Config Rules?</h3>
+<p id="answer888" class="answer">You can use EventBridge to trigger notifications when AWS resources are non-compliant. You can send configuration changes and compliance state notifications to SNS using filtering.</p>
+<button onclick="toggleAnswer('answer888')">Show Answer</button>
+
+<h3>What are permissions boundaries for IAM users and/or roles (no groups)?</h3>
+<p id="answer891" class="answer">A permissions boundary is an advanced feature for using a managed policy to set the maximum permissions that an identity-based policy can grant to an IAM entity. An entity's permissions boundary allows it to perform only the actions that are allowed by both its identity-based policies and its permissions boundaries.</p>
+<button onclick="toggleAnswer('answer891')">Show Answer</button>
+
+<h3>What is AWS Directory Services?</h3>
+<p id="answer894" class="answer">AWS Directory Services is a service that provides managed Active Directory (AD) services. AWS Managed Microsoft AD allows you to create your own AD in AWS, manage users locally, supports MFA, and establish “trust” connections with your on-premise AD. Users are shared on both ADs.</p>
+<button onclick="toggleAnswer('answer894')">Show Answer</button>
+
+<h3>What's the difference between Symmetric Key Encryption and Asymmetric Key Encryption?</h3>
+<div id="answer897" class="answer">
+  <ul>
+    <li><b>Symmetric Key Encryption:</b> In Symmetric-key encryption, the message is encrypted by using a key, and the same key is used to decrypt the message which makes it easy to use but less secure. It also requires a safe method to transfer the key from one party to another.</li>
+    <li><b>Asymmetric Key Encryption:</b> Asymmetric Key Encryption is based on public and private key encryption techniques. It uses two different keys to encrypt and decrypt the message. It is more secure than the symmetric key encryption technique but is much slower.</li>
+  </ul>
+</div>
+<button onclick="toggleAnswer('answer897')">Show Answer</button>
+
+<h3>What are the types of KMS keys?</h3>
+<p id="answer905" class="answer">The types of KMS keys are symmetric (AES-256 keys) and asymmetric (RSA &amp; ECC key pairs).</p>
+<button onclick="toggleAnswer('answer905')">Show Answer</button>
+
+<h3>What are KMS key policies?</h3>
+<p id="answer908" class="answer">KMS key policies are used to control access to KMS keys. The default KMS key policy is created if you don't provide a specific KMS key policy. It provides complete access to the key to the root user = entire AWS account. Custom KMS key policies define users and roles that can access the KMS key, and who can administer the key. They are useful for cross-account access of your KMS key.</p>
+<button onclick="toggleAnswer('answer908')">Show Answer</button>
+
+<h3>What are KMS multi-region keys?</h3>
+<p id="answer911" class="answer">KMS Multi-Region Keys are identical KMS keys that are created in different AWS Regions. These keys can be used interchangeably, have the same key ID, key material, automatic rotation, and can be used to encrypt in one Region and decrypt in other Regions.</p>
+<button onclick="toggleAnswer('answer911')">Show Answer</button>
+
+<h3>Are KMS Multi-Region Keys global?</h3>
+<p id="answer914" class="answer">No, KMS Multi-Region Keys are not global. Each Multi-Region key is managed independently and does not have a primary or replica key.</p>
+<button onclick="toggleAnswer('answer914')">Show Answer</button>
+
+<h3>What are the use cases for KMS Multi-Region Keys?</h3>
+<div id="answer917" class="answer">KMS Multi-Region Keys are useful for:
+<ul>
+<li>global client-side encryption</li>
+<li>encryption on Global DynamoDB</li>
+<li>Global Aurora.</li>
+</ul></div>
+<button onclick="toggleAnswer('answer917')">Show Answer</button>
+
+<h3>We want to assign a TTL to a parameter, which acts as an expiration date to force updating or deleting sensitive data like passwords in AWS Parameter Store, what should we use?</h3>
+<p id="answer925" class="answer">Parameter Policies in SSM Parameter Store</p>
+<button onclick="toggleAnswer('answer925')">Show Answer</button>
+
+<h3>What is AWS WAF and what does it protect against?</h3>
+<p id="answer928" class="answer">AWS WAF is a web application firewall that protects web applications from common web exploits at Layer 7, which is HTTP. It can be deployed on an Application Load Balancer, API Gateway, CloudFront, AppSync GraphQL API, or Cognito User Pool. It protects against common attacks such as SQL injection and Cross-Site Scripting (XSS) through IP sets, HTTP headers, HTTP body, or URI strings. It also provides size constraints, geo-match to block countries, and rate-based rules for DDoS protection.</p>
+<button onclick="toggleAnswer('answer928')">Show Answer</button>
+
+<h3>Can you use AWS WAF with NLB or CLB?</h3>
+<p id="answer931" class="answer">No</p>
+<button onclick="toggleAnswer('answer931')">Show Answer</button>
+
+<h3>We want to protect our AWS infrastructure against cryptocurrency mining-related activities, what should we use?</h3>
+<p id="answer934" class="answer">Amazon GuardDuty</p>
+<button onclick="toggleAnswer('answer934')">Show Answer</button>
+
+<h3>What is Amazon GuardDuty?</h3>
+<p id="answer937" class="answer">Amazon GuardDuty is <b>a threat detection service</b> offered by AWS that uses machine learning algorithms and anomaly detection, along with third-party data, <b>to protect your AWS account</b> from various threats.
+<br>Amazon GuardDuty is a security monitoring service that analyzes and processes Foundational data sources, such as AWS CloudTrail management events, AWS CloudTrail event logs, VPC flow logs (from Amazon EC2 instances), and DNS logs. It also processes Features such as Kubernetes audit logs, RDS login activity, S3 logs, EBS volumes, Runtime monitoring, and Lambda network activity logs.</p>
+<button onclick="toggleAnswer('answer937')">Show Answer</button>
+
+<h3>What is Amazon Inspector?</h3>
+<p id="answer940" class="answer">Amazon Inspector is an automated security assessment service offered by AWS that analyzes EC2 instances, container images pushed to Amazon ECR, and Lambda functions for vulnerabilities.</p>
+<button onclick="toggleAnswer('answer940')">Show Answer</button>
+
+<h3>What is Amazon Macie?</h3>
+<p id="answer943" class="answer">Amazon Macie is a fully managed data security and data privacy service offered by AWS that uses machine learning and pattern matching to discover and protect sensitive data in AWS S3 Buckets, such as personal, Financial and Protected health information and Intellectual property.</p>
+<button onclick="toggleAnswer('answer943')">Show Answer</button>
+
+<h3>Does the default VPC have Internet connectivity?</h3>
+<p id="answer946" class="answer">Yes</p>
+<button onclick="toggleAnswer('answer946')">Show Answer</button>
+
+<h3>What IP addresses are reserved in a subnet?</h3>
+<p id="answer949" class="answer">AWS reserves 5 IP addresses (first 4 &amp; last 1) in each subnet</p>
+<button onclick="toggleAnswer('answer949')">Show Answer</button>
+
+<h3>How many IP addresses in a /27 subnet?</h3>
+<p id="answer952" class="answer">32-27=5 ==&gt; 2^5 = 32 IP addresses</p>
+<button onclick="toggleAnswer('answer952')">Show Answer</button>
+
+<h3>What is an Internet Gateway (IGW) in AWS and what is its purpose?</h3>
+<p id="answer955" class="answer">An Internet Gateway (IGW) in AWS is a horizontally scalable and highly available service that allows resources (e.g., EC2 instances) in a VPC to connect to the internet.</p>
+<button onclick="toggleAnswer('answer955')">Show Answer</button>
+
+<h3>Can multiple VPCs be attached to a single IGW?</h3>
+<p id="answer958" class="answer">No, one VPC can only be attached to one IGW and vice versa.</p>
+<button onclick="toggleAnswer('answer958')">Show Answer</button>
+
+<h3>What is a Bastion Host and how is it used in AWS?</h3>
+<p id="answer961" class="answer">A Bastion Host is a special EC2 instance that is used as a jump host for SSH access to private EC2 instances in a VPC. It is typically placed in a public subnet and its security group must allow inbound traffic on port 22 from restricted CIDR. The security group of the EC2 instances must allow traffic from the security group of the Bastion Host, or the private IP of the Bastion Host.</p>
+<button onclick="toggleAnswer('answer961')">Show Answer</button>
+
+<h3>What is a Network Access Control List (NACL) in AWS and how does it work?</h3>
+<p id="answer964" class="answer">A Network Access Control List (NACL) in AWS is like a firewall that controls traffic from and to subnets. Each subnet has its own NACL, and newly created subnets are assigned the default NACL. NACL rules have a number, and the first rule match drives the decision. The last rule is an asterisk (*) and denies a request in case of no rule match. AWS recommends adding rules by increment of 100. Newly created NACLs will deny everything, and NACLs are a great way of blocking a specific IP address at the subnet level.</p>
+<button onclick="toggleAnswer('answer964')">Show Answer</button>
+
+<h3>What are the types of VPC endpoints in AWS?</h3>
+<p id="answer967" class="answer">There are two types of endpoints in AWS:</p>
+<ul>
+<li>Interface endpoints and gateway endpoints. Interface endpoints are powered by PrivateLink and provision an ENI (private IP address) as an entry point. They support most AWS services and have a cost per hour plus a cost per GB of data processed.</li>
+<li>Gateway endpoints, on the other hand, provision a gateway and must be used as a target in a route table. They do not use security groups and support both <b>S3</b> and <b>DynamoDB</b>. Gateway endpoints are free.</li>
+</ul>
+<button onclick="toggleAnswer('answer967')">Show Answer</button>
+
+<h3>What is AWS VPN CloudHub?</h3>
+<p id="answer974" class="answer">AWS VPN CloudHub is a service provided by AWS that allows you to establish secure connections between multiple VPCs over the internet. It provides a hub-and-spoke model for connecting VPCs, with the hub being the central point of communication and the spokes being the individual VPCs. AWS VPN CloudHub simplifies the process of connecting multiple VPCs by providing a single VPN connection for all VPCs.</p>
+<button onclick="toggleAnswer('answer974')">Show Answer</button>
+
+<h3>We want to create multiple Site-to-Site VPN connections to increase the bandwidth of our connection to AWS, what should we use?</h3>
+<p id="answer977" class="answer">Transit Gateway: Site-to-Site VPN ECMP</p>
+<button onclick="toggleAnswer('answer977')">Show Answer</button>
+
+<h3>Can IPv4 be disabled in a VPC?</h3>
+<p id="answer980" class="answer">No</p>
+<button onclick="toggleAnswer('answer980')">Show Answer</button>
+
+<h3>What is an egress-only Internet Gateway?</h3>
+<p id="answer983" class="answer">An egress-only internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows outbound communication over IPv6 from instances in your VPC to the internet and prevents the internet from initiating an IPv6 connection with your instances.</p>
+<button onclick="toggleAnswer('answer983')">Show Answer</button>
+
+<h3>What is AWS Network Firewall?</h3>
+<p id="answer986" class="answer">AWS Network Firewall is a service that allows you to protect your entire Amazon VPC. It can inspect VPC to VPC traffic, outbound to the internet, inbound from the internet, and to/from Direct Connect &amp; Site-to-Site VPN. The AWS Network Firewall uses the AWS Gateway Load Balancer internally. Rules can be centrally managed cross-account by AWS Firewall Manager to apply to many VPCs.</p>
+<button onclick="toggleAnswer('answer986')">Show Answer</button>
+
+<h3>What is the max CIDR in AWS?</h3>
+<p id="answer989" class="answer">The max CIDR in AWS is /16.</p>
+<button onclick="toggleAnswer('answer989')">Show Answer</button>
+
+<h3>What are the different Disaster Recovery Strategies?</h3>
+<div id="answer150" class="answer">
+   <ul>
+<li>Backup and Restore</li>
+<li>Pilot Light</li>
+<li>Warm Standby</li>
+<li>Hot Site / Multi Site Approach</li>
+</ul> 
+</div>
+<button onclick="toggleAnswer('answer150')">Show Answer</button>
+
+
+<h3>What does RTO mean in disaster recovery solutions?</h3>
+<p id="answer151" class="answer">
+   <a href="https://www.druva.com/glossary/what-is-recovery-time-objective-definitions-and-related-faqs/" style="font-size: 20px;">Recovery Time Objective</a><span style="font-size: 20px;"> (RTO) is the duration of time and a service level within which a business process must be restored after a disaster in order to avoid unacceptable consequences associated with a break in continuity. In other words, the RTO is the answer to the question: “How much time did it take to recover after notification of business process disruption?<br>“</span>
+</p>
+<button onclick="toggleAnswer('answer151')">Show Answer</button>
+
+<h3>What does RPO mean in disaster recovery solutions?</h3>
+<p id="answer152" class="answer">RPO is your goal for the maximum amount of data the organization can tolerate losing. This parameter is measured in time: from the moment a failure occurs to your last valid data backup. For example, if you experience a failure now and your last full data backup was 24 hours ago, the RPO is 24 hours.&nbsp;</p>
+<button onclick="toggleAnswer('answer152')">Show Answer</button>
+
+<h3>Explain the Pilot Light disaster recovery strategy?</h3>
+<div id="answer153" class="answer">
+    <ul>
+<li>A small version of the app is always running in the cloud</li>
+<li>Useful for the critical core (pilot light)</li>
+<li>Very similar to Backup and Restore</li>
+<li>Faster than Backup and Restore as critical systems are already up</li>
+</ul>
+</div>
+<button onclick="toggleAnswer('answer153')">Show Answer</button>
+
+
+<h3>Explain the disaster recovery strategy Warm Standby</h3>
+<div id="answer154" class="answer">
+    <ul>
+        <li>Full system is up and running, but at minimum size</li>
+        <li>Upon disaster, we can scale to production load</li>
+        </ul>
+    </div>
+<button onclick="toggleAnswer('answer154')">Show Answer</button>
+
+
+<h3>Explain the disaster recovery strategy Hot Site / Multi Site Approach</h3>
+<div id="answer155" class="answer">
+    <ul>
+<li>Very low RTO (minutes or seconds) — very expensive</li>
+<li>Full Production Scale is running AWS and On Premise</li>
+</ul>
+</div>
+<button onclick="toggleAnswer('answer155')">Show Answer</button>
+
+
+<h3>What is AWS Server Migration Service (SMS)?</h3>
+<p id="answer156" class="answer">AWS Server Migration Service (SMS) is a service that provides incremental replication of on-premise live servers to AWS.</p>
+<button onclick="toggleAnswer('answer156')">Show Answer</button>
+
+<h3>What is AWS Application Migration Service (MGN)?</h3>
+<div id="answer157" class="answer">
+   <ul>
+<li>AWS Application Migration Service is the "AWS evolution" of CloudEndure Migration, and it replaces AWS Server Migration Service (SMS).</li>
+<li>It is a lift-and-shift (rehost) solution that simplifies migrating applications to AWS.</li>
+<li>MGN can convert physical, virtual, and cloud-based servers to run natively on AWS.</li>
+<li>It supports a wide range of platforms, operating systems, and databases.</li>
+<li>MGN promises minimal downtime and reduced costs during migration.</li>
+</ul> 
+</div>
+<button onclick="toggleAnswer('answer157')">Show Answer</button>
+
+
+<h3>What's ENA (Elastic Network Adapter)?</h3>
+<p id="answer158" class="answer">ENA (Elastic Network Adapter) is to enhance your EC2 networking and gives you higher bandwidth, higher package per second, and lower latency.</p>
+<button onclick="toggleAnswer('answer158')">Show Answer</button>
+
+<h3>What's Elastic Fabric Adapter (EFA)</h3>
+<div id="answer159" class="answer">
+    <ul>
+<li>Improved ENA for HPC (High Performance Computing), only works for Linux</li>
+<li>Great for inter-node communications, tightly coupled workloads</li>
+<li>Leverages Message Passing Interface (MPI) standard</li>
+<li>Bypasses the underlying Linux OS to provide low-latency, reliable transport</li>
+</ul>
+</div>
+<button onclick="toggleAnswer('answer159')">Show Answer</button>
+
+
+<h3>What's AWS ParallelCluster?</h3>
+<p id="answer160" class="answer">AWS ParallelCluster is an open source <b>cluster management tool</b> that makes it easy for you to <b>deploy and manage High Performance Computing (HPC) clusters on AWS</b>. ParallelCluster uses a simple graphical user interface (GUI) or text file to model and provision the resources needed for your HPC applications in an automated and secure manner. It also supports multiple instance types and job submission queues, and job schedulers like AWS Batch and Slurm. You can enable EFA on the cluster to improve network performance.</p>
+<button onclick="toggleAnswer('answer160')">Show Answer</button>
+
+<h3>What is Amazon Pinpoint?</h3>
+<div id="answer161" class="answer">
+    <ul>
+    <li>Amazon Pinpoint is a scalable 2-way (outbound/inbound) <b>marketing communications</b> service.</li>
+<li>It supports email, SMS, push, voice, and in-app messaging and allows users to segment and personalize messages with the right content for customers.</li>
+<li>Amazon Pinpoint can receive replies and can scale to billions of messages per day.</li>
+<li>Use cases for Amazon Pinpoint include running campaigns by sending marketing, bulk, and transactional SMS messages.</li>
+<li>Amazon Pinpoint differs from Amazon SNS or Amazon SES in that users can create message templates, delivery schedules, highly-targeted segments, and full campaigns. In SNS and SES, users manage each message's audience, content, and delivery schedule.</li>
+</ul>
+</div>
+<button onclick="toggleAnswer('answer161')">Show Answer</button>
+
+
+
+<h3>How can you execute a document (script) or run a command across multiple instances without needing to use SSH?</h3>
+<p id="answer162" class="answer">Use AWS Systems Manager - Run Command.</p>
+<button onclick="toggleAnswer('answer162')">Show Answer</button>
+
+<h3>What is Amazon Elastic Transcoder used for?</h3>
+<p id="answer163" class="answer">Amazon Elastic Transcoder is used to convert media files stored in S3 into media files in the formats required by consumer playback devices. It is highly scalable, easy to use, cost-effective, and fully managed and secure.</p>
+<button onclick="toggleAnswer('answer163')">Show Answer</button>
+
+<h3>What are the differences between AWS Batch and AWS Lambda?</h3>
+<p id="answer164" class="answer">AWS Lambda has a time limit, limited runtimes, limited temporary disk space, and is serverless, whereas AWS Batch has no time limit, any runtime as long as it's packaged as a Docker image, relies on EBS/instance store for disk space, and relies on EC2 (can be managed by AWS).</p>
+<button onclick="toggleAnswer('answer164')">Show Answer</button>
+
+<h3>What is Amazon AppFlow?</h3>
+<p id="answer165" class="answer">Amazon AppFlow is a fully managed integration service that enables secure <b>data transfer between Software-as-a-Service (SaaS)</b> applications and AWS. It supports sources such as <b>Salesforce</b>, SAR, Zendesk, Slack, and ServiceNow, and destinations like AWS services such as Amazon S3, Amazon Redshift, and non-AWS destinations such as SnowFlake and Salesforce.</p>
+<button onclick="toggleAnswer('answer165')">Show Answer</button>
+
+<h3>What are the 6 pillars of the Well-Architected Framework?</h3>
+<p id="answer166" class="answer">1) Operational Excellence<br>
+2) Security<br>
+3) Reliability<br>
+4) Performance Efficiency<br>
+5) Cost Optimization<br>
+6) Sustainability</p>
+<button onclick="toggleAnswer('answer166')">Show Answer</button>
+
+<h3>What is Trusted Advisor?</h3>
+<p id="answer167" class="answer">AWS Trusted Advisor is a service provided by AWS that analyzes AWS accounts and provides recommendations on 5 categories, including <b>Cost Optimization, Performance, Security, Fault Tolerance, and Service Limits.</b></p>
+<button onclick="toggleAnswer('answer167')">Show Answer</button>
+
+<h3>AWS Trusted Adviser Analyze your AWS accounts and provides recommendation on 5 categories, what are they?</h3>
+<div id="answer168" class="answer">
+    <ul>
+    <li>Cost optimization</li>
+<li>Performance</li>
+<li>Security</li>
+<li>Fault tolerance</li>
+<li>Service limits</li>
+</ul>
+</div>
+
+<button onclick="toggleAnswer('answer168')">Show Answer</button>
+
+
+<h3>What are the 7 CORE CHECKS for the Basic & Developer Support plan in AWS Trusted Advisor?</h3>
+<div id="answer169" class="answer">
+   <ul>
+<li>S3 Bucket Permissions</li>
+<li>Security Groups — Specific Ports Unrestricted</li>
+<li>IAM Use (one IAM user minimum)</li>
+<li>MFA on Root Account</li>
+<li>EBS Public Snapshots</li>
+<li>RDS Public Snapshots</li>
+<li>Service Limits</li>
+</ul> 
+</div>
+<button onclick="toggleAnswer('answer169')">Show Answer</button>
+
+<br>When the new AMI is copied from region A into region B, it automatically creates a snapshot in region B because AMIs are based on the underlying snapshots. 
+<br>For Amazon Aurora, each Read Replica is associated with a priority tier (0-15). In the event of a failover, Amazon Aurora will promote the Read Replica that has the highest priority (the lowest numbered tier). If two or more Aurora Replicas share the same priority, then Amazon RDS promotes the replica that is largest in size. If two or more Aurora Replicas share the same priority and size, then Amazon Aurora promotes an arbitrary replica in the same promotion tier.
+<br>Global accelerator:
+<br>No variability around clients that cache IP addresses: Some client devices and internet resolvers cache DNS answers for long periods of time. So when you make a configuration update, or there’s an application failure or change in your routing preference, you don’t know how long it will take before all of your users receive updated IP addresses. With AWS Global Accelerator, you don’t have to rely on the IP address caching settings of client devices. Change propagation takes a matter of seconds, which reduces your application downtime.
+<br>what's a spot fleet
+<br>a Spot Fleet is a collection of Spot Instances that are automatically launched and managed by AWS to help you optimize costs. The Spot Fleet allows you to request a specific capacity (number of instances) that you need for your application or workload.
+
+<br>The target capacity in a Spot Fleet refers to the desired number of Spot Instances you want the fleet to maintain at any given time. When you create a Spot Fleet request, you specify the target capacity as part of the request configuration. AWS attempts to maintain the fleet's target capacity as closely as possible, considering the available Spot capacity and your bid price.
+<br>AWS Resource Access Manager (AWS RAM) helps you securely share your resources across AWS accounts, within your organization or organizational units (OUs), and with AWS Identity and Access Management (IAM) roles and users for supported resource types. If you have multiple AWS accounts, you can create a resource once and use AWS RAM to make that resource usable by those other accounts. 
+<br>You cannot use a launch configuration to provision capacity across multiple instance types using both On-Demand Instances and Spot Instances.
+<br>There is no such thing as using Cognito Authentication via Cognito Identity Pools for managing user authentication for the application. Application-specific user authentication can be provided via Cognito User Pools. Amazon Cognito identity pools provide temporary AWS credentials for users who are guests (unauthenticated) and for users who have been authenticated and received a token.
+<br> Amazon RDS for MariaDB, Amazon RDS for MySQL, Amazon RDS for PostgreSQL, Amazon RDS for SQL Server and Amazon RDS for Oracle support RDS Storage Auto Scaling. RDS Storage Auto Scaling automatically scales storage capacity in response to growing database workloads, with zero downtime.
+<br>You can enable Auto Scaling with just a few clicks in the AWS Management Console. There is no additional cost for RDS Storage Auto Scaling. You pay only for the RDS resources needed to run your applications.
+</body>
+</html>
